@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 public class Launch {
 
 	public static void main(String[] args) {
