@@ -5,6 +5,8 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import panels.Ch5Vocab;
+
 public class Quiz{
 
 	public static JFrame jf;
@@ -13,8 +15,7 @@ public class Quiz{
 	
 	public static void main(String args[])
 	{
-		System.out.println("new");
-		jf = new JFrame("Bone Quiz");
+		jf = new JFrame("Physiology Quiz");
 		mm = new MainMenu(jf.getContentPane());
 		mm.setBackground(Color.WHITE);
 		jf.setSize(900,700);

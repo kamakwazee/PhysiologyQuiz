@@ -20,7 +20,7 @@ public class Launch {
 			downloadVersion.setSize(620,300);
 			downloadVersion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			downloadVersion.setVisible(true);
-			downloadVersion.Download(new URL("http://kamakwazee.net/bonequiz/version.txt"), new File("update.txt"), "Checking for Updates");
+			downloadVersion.Download(new URL("http://kamakwazee.net/physiologyquiz/version.txt"), new File("update.txt"), "Checking for Updates");
 		}catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -31,12 +31,13 @@ public class Launch {
 		{
 			
 			try {
-				Downloader downloadProgram = new Downloader("Downloading Bone Quiz");
+				Downloader downloadProgram = new Downloader("Downloading Physiology Quiz");
 				downloadProgram.setSize(620,300);
 				downloadProgram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				downloadProgram.setVisible(true);
-				downloadProgram.Download(new URL("http://kamakwazee.net/bonequiz/BoneQuiz.zip"),new File("BoneQuiz.zip"),"Downloading Bone Quiz");
+				downloadProgram.Download(new URL("http://kamakwazee.net/physiologyquiz/PhysiologyQuiz.zip"),new File("PhysiologyQuiz.zip"),"Downloading Physiology Quiz");
 				install();
+				removeFiles();
 				runProgram();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -52,8 +53,9 @@ public class Launch {
 				downloadUpdates.setSize(620,300);
 				downloadUpdates.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				downloadUpdates.setVisible(true);
-				downloadUpdates.Download(new URL("http://kamakwazee.net/bonequiz/BoneQuiz.zip"), new File("BoneQuiz.zip"), "Downloading Updates");
+				downloadUpdates.Download(new URL("http://kamakwazee.net/physiologyquiz/PhysiologyQuiz.zip"), new File("PhysiologyQuiz.zip"), "Downloading Updates");
 				install();
+				removeFiles();
 				runProgram();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -71,6 +73,7 @@ public class Launch {
 		{
 			
 			try {
+				removeFiles();
 				runProgram();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -79,14 +82,28 @@ public class Launch {
 			
 		}
 		
+	}
+	
+	private static void removeFiles()
+	{
 		
-
+		File zip = new File("PhysiologyQuiz.zip");
+		File update = new File("update.txt");
+		
+		do
+		{
+			
+			zip.delete();
+			update.delete();
+			
+		}while(zip.exists() || update.exists());
+		
 	}
 	
 	private static void install()
 	{
 		
-		Installer installProgram = new Installer("Installing Bone Quiz","BoneQuiz.zip");
+		Installer installProgram = new Installer("Installing Physiology Quiz","PhysiologyQuiz.zip");
 		final Object lock = new Object();
 		Thread t = new Thread()
 		{
@@ -126,14 +143,6 @@ public class Launch {
 			e.printStackTrace();
 		}
 		
-		File zip = new File("BoneQuiz.zip");
-		
-		do
-		{
-			
-			zip.delete();
-			
-		}while(zip.exists());
 		
 	}
 	
