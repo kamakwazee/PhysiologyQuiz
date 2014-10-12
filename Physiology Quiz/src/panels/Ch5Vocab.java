@@ -10,6 +10,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import quiz.Quiz;
@@ -21,7 +22,7 @@ public class Ch5Vocab extends JPanel {
 	 */
 	private static final long serialVersionUID = -8980207091717318534L;
 	
-	Color DARKGREEN;
+	static Color DARKGREEN, correctcolor;
 	
 	JLabel question;
 	
@@ -116,88 +117,110 @@ public class Ch5Vocab extends JPanel {
 	static String[][] all = new String[][]{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm};
 	
 	
-	public Ch5Vocab(Container pane)
+	public Ch5Vocab(Container pane, boolean colorblind, boolean definitions)
 	{
 		JPanel panel = this;
-		
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
 		DARKGREEN = new Color(0,153,0);
 		
+		if(colorblind)
+			correctcolor = Color.BLUE;
+		else
+			correctcolor = DARKGREEN;
+		
 		setLayout(null);
 		
-		Random r = new Random();
+		if(!definitions)
+		{
 		
-		index = r.nextInt(all.length);
-		
-		question = new JLabel(all[index][0]);
-		question.setBounds(200,100,question.getMaximumSize().width,question.getMaximumSize().height);
-		add(question);
-		
-		answer = new JTextArea();
-		answer.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
-		answer.setLineWrap(true);
-		answer.setWrapStyleWord(true);
-		answer.setBounds(200,120,500,300);
-		add(answer);
-		
-		next = new JButton("NEXT");
-		next.addActionListener(
-			new ActionListener()
-			{
-				
-				public void actionPerformed(ActionEvent e)
+			Random r = new Random();
+			
+			index = r.nextInt(all.length);
+			
+			question = new JLabel(all[index][0]);
+			question.setBounds(200,100,question.getMaximumSize().width,question.getMaximumSize().height);
+			add(question);
+			
+			answer = new JTextArea();
+			answer.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+			answer.setLineWrap(true);
+			answer.setWrapStyleWord(true);
+			answer.setBounds(200,120,500,300);
+			add(answer);
+			
+			next = new JButton("NEXT");
+			next.addActionListener(
+				new ActionListener()
 				{
 					
-					if(section == 0)
+					public void actionPerformed(ActionEvent e)
 					{
 						
-						if(answer.getText().equals(all[index][1]))
+						if(section == 0)
 						{
 							
-							correct = true;
-							answer.setForeground(DARKGREEN);
-							answer.setText("Correct\n\n" + all[index][1]);
+							if(answer.getText().equalsIgnoreCase(all[index][1]))
+							{
+								
+								correct = true;
+								answer.setForeground(correctcolor);
+								answer.setText("Correct\n\n" + all[index][1]);
+								
+							}
+							else
+							{
+								
+								correct = false;
+								answer.setForeground(Color.RED);
+								answer.setText("Wrong\n\n" + all[index][1]);
+								
+							}
+							
+							section = 1;
+							
 							
 						}
 						else
 						{
 							
-							correct = false;
-							answer.setForeground(Color.RED);
-							answer.setText("Wrong\n\n" + all[index][1]);
+							answer.setForeground(Color.BLACK);
+							pi = index;
+							do
+							{
+								index = r.nextInt(all.length);
+							}while(index == pi);
+							question.setText(all[index][0]);
+							question.setBounds(question.getBounds().x,question.getBounds().y,question.getMaximumSize().width,question.getMaximumSize().height);
+							answer.setText("");
+							section = 0;
 							
 						}
-						
-						section = 1;
-						
-						
-					}
-					else
-					{
-						
-						answer.setForeground(Color.BLACK);
-						pi = index;
-						do
-						{
-							index = r.nextInt(all.length);
-						}while(index == pi);
-						question.setText(all[index][0]);
-						question.setBounds(question.getBounds().x,question.getBounds().y,question.getMaximumSize().width,question.getMaximumSize().height);
-						answer.setText("");
-						section = 0;
 						
 					}
 					
 				}
-				
-			}
-		);
-		next.setBounds(600,430,100,50);
-		add(next);
+			);
+			next.setBounds(600,430,100,50);
+			add(next);
+			
+		}
+		else
+		{
+			
+			answer = new JTextArea();
+			answer.setEditable(false);
+			answer.setBackground(Color.WHITE);
+			answer.setText(convertToString(all));
+			
+			JScrollPane scrollpane = new JScrollPane(answer);
+			scrollpane.setBounds(3,3,pane.getWidth()-3,pane.getHeight()-75);
+			add(scrollpane);
+			
+		}
 		
 		mainmenu = new JButton("Menu");
-		mainmenu.setBounds(750,600,100,50);
+		mainmenu.setBounds(750,640,100,50);
 		mainmenu.addActionListener(
 				
 			new ActionListener()
@@ -215,6 +238,21 @@ public class Ch5Vocab extends JPanel {
 		);
 		add(mainmenu);
 		
+	}
+	
+	private static String convertToString(String[][] str)
+	{
+		
+		String st = "\n";
+		for(String[] sia : str)
+		{
+			
+			st += " " + sia[0] + " – " + sia[1] + "\t\n\n";
+			
+		}
+		
+		
+		return st;
 	}
 
 }

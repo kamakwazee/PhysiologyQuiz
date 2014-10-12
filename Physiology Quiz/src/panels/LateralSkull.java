@@ -26,21 +26,25 @@ public class LateralSkull extends JPanel{
 	private static final long serialVersionUID = 5404043282314214437L;
 	private static BufferedImage bi;
 	private static JTextField cs,pb,tb,ls,ss,ob,zp,eam,mp,sp,mr,ma,mf,m,am,mx,zb,nb,lb,eb,sb,fb;
+	private static Color cc; //Correct color
 	private static Color DARKGREEN;
 	private static JButton mainmenu;
 	
-	public LateralSkull(Container pane)
+	public LateralSkull(Container pane, boolean colorblind)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
 		DARKGREEN = new Color(0,153,0);
+		if(colorblind)
+			cc = Color.BLUE;
+		else
+			cc = DARKGREEN;
 		
 		try {
 			File f = new File("resources" + File.separator + "LateralSkull.jpg");
 			bi = ImageIO.read(f);
-			
 			
 			cs = new JTextField();
 			cs.setBackground(Color.WHITE);
@@ -53,7 +57,7 @@ public class LateralSkull extends JPanel{
 						if(cs.getText().equalsIgnoreCase("Coronal Suture"))
 						{
 							
-							cs.setForeground(DARKGREEN);
+							cs.setForeground(cc);
 							cs.setBorder(null);
 							cs.setEditable(false);
 							
@@ -87,7 +91,7 @@ public class LateralSkull extends JPanel{
 						if(pb.getText().equalsIgnoreCase("Parietal Bone"))
 						{
 							
-							pb.setForeground(DARKGREEN);
+							pb.setForeground(cc);
 							pb.setBorder(null);
 							pb.setEditable(false);
 							
@@ -122,7 +126,7 @@ public class LateralSkull extends JPanel{
 						if(tb.getText().equalsIgnoreCase("Temporal Bone"))
 						{
 							
-							tb.setForeground(DARKGREEN);
+							tb.setForeground(cc);
 							tb.setBorder(null);
 							tb.setEditable(false);
 							
@@ -157,7 +161,7 @@ public class LateralSkull extends JPanel{
 						if(ls.getText().equalsIgnoreCase("Lambdoid Suture"))
 						{
 							
-							ls.setForeground(DARKGREEN);
+							ls.setForeground(cc);
 							ls.setBorder(null);
 							ls.setEditable(false);
 							
@@ -192,7 +196,7 @@ public class LateralSkull extends JPanel{
 						if(ss.getText().equalsIgnoreCase("Squamous Suture"))
 						{
 							
-							ss.setForeground(DARKGREEN);
+							ss.setForeground(cc);
 							ss.setBorder(null);
 							ss.setEditable(false);
 							
@@ -227,7 +231,7 @@ public class LateralSkull extends JPanel{
 						if(ob.getText().equalsIgnoreCase("Occipital Bone"))
 						{
 							
-							ob.setForeground(DARKGREEN);
+							ob.setForeground(cc);
 							ob.setBorder(null);
 							ob.setEditable(false);
 							
@@ -262,7 +266,7 @@ public class LateralSkull extends JPanel{
 						if(zp.getText().equalsIgnoreCase("Zygomatic Process"))
 						{
 							
-							zp.setForeground(DARKGREEN);
+							zp.setForeground(cc);
 							zp.setBorder(null);
 							zp.setEditable(false);
 							
@@ -297,7 +301,7 @@ public class LateralSkull extends JPanel{
 						if(eam.getText().equalsIgnoreCase("Exterior Acoustic Meatus"))
 						{
 							
-							eam.setForeground(DARKGREEN);
+							eam.setForeground(cc);
 							eam.setBorder(null);
 							eam.setEditable(false);
 							
@@ -332,7 +336,7 @@ public class LateralSkull extends JPanel{
 						if(mp.getText().equalsIgnoreCase("Mastoid Process"))
 						{
 							
-							mp.setForeground(DARKGREEN);
+							mp.setForeground(cc);
 							mp.setBorder(null);
 							mp.setEditable(false);
 							
@@ -367,7 +371,7 @@ public class LateralSkull extends JPanel{
 						if(sp.getText().equalsIgnoreCase("Styloid Process"))
 						{
 							
-							sp.setForeground(DARKGREEN);
+							sp.setForeground(cc);
 							sp.setBorder(null);
 							sp.setEditable(false);
 							
@@ -402,7 +406,7 @@ public class LateralSkull extends JPanel{
 						if(mr.getText().equalsIgnoreCase("Mandibular Ramus"))
 						{
 							
-							mr.setForeground(DARKGREEN);
+							mr.setForeground(cc);
 							mr.setBorder(null);
 							mr.setEditable(false);
 							
@@ -437,7 +441,7 @@ public class LateralSkull extends JPanel{
 						if(ma.getText().equalsIgnoreCase("Mandibular Angle"))
 						{
 							
-							ma.setForeground(DARKGREEN);
+							ma.setForeground(cc);
 							ma.setBorder(null);
 							ma.setEditable(false);
 							
@@ -472,7 +476,7 @@ public class LateralSkull extends JPanel{
 						if(fb.getText().equalsIgnoreCase("Frontal Bone"))
 						{
 							
-							fb.setForeground(DARKGREEN);
+							fb.setForeground(cc);
 							fb.setBorder(null);
 							fb.setEditable(false);
 							
@@ -507,7 +511,7 @@ public class LateralSkull extends JPanel{
 						if(sb.getText().equalsIgnoreCase("Sphenoid Bone"))
 						{
 							
-							sb.setForeground(DARKGREEN);
+							sb.setForeground(cc);
 							sb.setBorder(null);
 							sb.setEditable(false);
 							
@@ -542,7 +546,7 @@ public class LateralSkull extends JPanel{
 						if(eb.getText().equalsIgnoreCase("Ethmoid Bone"))
 						{
 							
-							eb.setForeground(DARKGREEN);
+							eb.setForeground(cc);
 							eb.setBorder(null);
 							eb.setEditable(false);
 							
@@ -577,7 +581,7 @@ public class LateralSkull extends JPanel{
 						if(lb.getText().equalsIgnoreCase("Lacrimal Bone"))
 						{
 							
-							lb.setForeground(DARKGREEN);
+							lb.setForeground(cc);
 							lb.setBorder(null);
 							lb.setEditable(false);
 							
@@ -612,7 +616,7 @@ public class LateralSkull extends JPanel{
 						if(nb.getText().equalsIgnoreCase("Nasal Bone"))
 						{
 							
-							nb.setForeground(DARKGREEN);
+							nb.setForeground(cc);
 							nb.setBorder(null);
 							nb.setEditable(false);
 							
@@ -647,7 +651,7 @@ public class LateralSkull extends JPanel{
 						if(zb.getText().equalsIgnoreCase("Zygomatic Bone"))
 						{
 							
-							zb.setForeground(DARKGREEN);
+							zb.setForeground(cc);
 							zb.setBorder(null);
 							zb.setEditable(false);
 							
@@ -682,7 +686,7 @@ public class LateralSkull extends JPanel{
 						if(mx.getText().equalsIgnoreCase("Maxilla"))
 						{
 							
-							mx.setForeground(DARKGREEN);
+							mx.setForeground(cc);
 							mx.setBorder(null);
 							mx.setEditable(false);
 							
@@ -717,7 +721,7 @@ public class LateralSkull extends JPanel{
 						if(am.getText().equalsIgnoreCase("Alveolar Margins"))
 						{
 							
-							am.setForeground(DARKGREEN);
+							am.setForeground(cc);
 							am.setBorder(null);
 							am.setEditable(false);
 							
@@ -752,7 +756,7 @@ public class LateralSkull extends JPanel{
 						if(m.getText().equalsIgnoreCase("Mandible"))
 						{
 							
-							m.setForeground(DARKGREEN);
+							m.setForeground(cc);
 							m.setBorder(null);
 							m.setEditable(false);
 							
@@ -787,7 +791,7 @@ public class LateralSkull extends JPanel{
 						if(mf.getText().equalsIgnoreCase("Mental Foramen"))
 						{
 							
-							mf.setForeground(DARKGREEN);
+							mf.setForeground(cc);
 							mf.setBorder(null);
 							mf.setEditable(false);
 							
