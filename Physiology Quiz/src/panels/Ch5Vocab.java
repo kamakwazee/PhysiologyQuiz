@@ -40,11 +40,11 @@ public class Ch5Vocab extends JPanel {
 
 	static String[] b = new String[]{"Topical","medication applied to the skin"};
 
-	static String[] c = new String[]{"Pruritus","Itching caused by skin disorders (infections), systemic disorders (cancer, kidney failure), psychogenic factors (emotional stress), or allergic reactions."};
+	static String[] c = new String[]{"Pruritus","Itching caused by skin disorders (infections), systemic disorders (cancer, kidney failure), psychogenic factors (emotional stress), or allergic reactions"};
 
 	static String[] d = new String[]{"Psoriasis","A common, chronic skin disorder in which keratinocytes divide and move more quickly than normal from the stratum basale to the stratum corneum"};
 
-	static String[] e = new String[]{"Laceration","An irregular tear of the skin."};
+	static String[] e = new String[]{"Laceration","An irregular tear of the skin"};
 
 	static String[] f = new String[]{"Keratosis","Formation of a hardened growth of epidermal tissue"};
 
@@ -70,23 +70,23 @@ public class Ch5Vocab extends JPanel {
 
 	static String[] q = new String[]{"Pressure ulcers","shedding of epithelium caused by a constant deficiency of blood flow to tissues"};
 
-	static String[] r = new String[]{"Burn","damage caused by excessive heat, electricity, radioactivity, or corrosive chemicals that denature the proteins in the skin cells."};
+	static String[] r = new String[]{"Burn","damage caused by excessive heat, electricity, radioactivity, or corrosive chemicals that denature the proteins in the skin cells"};
 
-	static String[] s = new String[]{"Photosensitivity","A heightened reaction of the skin after consumption of certain medications or contact with certain substances."};
+	static String[] s = new String[]{"Photosensitivity","A heightened reaction of the skin after consumption of certain medications or contact with certain substances"};
 
 	static String[] t = new String[]{"Transdermal drug administration","Enables a drug contained within an adhesive skin patch to pass across the epidermis and into the blood vessels of the dermis"};
 
-	static String[] u = new String[]{"Chemotherapy","The treatment of disease, usually cancer, by means of chemical substances or drugs."};
+	static String[] u = new String[]{"Chemotherapy","The treatment of disease, usually cancer, by means of chemical substances or drugs"};
 
-	static String[] v = new String[]{"Pallor","Paleness of the skin that may occur in conditions such as shock and anemia."};
+	static String[] v = new String[]{"Pallor","Paleness of the skin that may occur in conditions such as shock and anemia"};
 
 	static String[] w = new String[]{"Erythema","Redness of the skin caused by engorgement"};
 
 	static String[] x = new String[]{"Jaundice","Due to the buildup of the yellow pigment bilirubin in the skin"};
 
-	static String[] y = new String[]{"Skin graft","transfer of a patch of healthy skin taken from a donor site to cover a wound."};
+	static String[] y = new String[]{"Skin graft","transfer of a patch of healthy skin taken from a donor site to cover a wound"};
 
-	static String[] z = new String[]{"Dermatology","The branch of medicine that specializes in diagnosing and treating skin disorders."};
+	static String[] z = new String[]{"Dermatology","The branch of medicine that specializes in diagnosing and treating skin disorders"};
 
 	static String[] aa = new String[]{"Cyanotic","mucous membranes, nail beds, and skin appear bluish when blood is not picking up an adequate amount of oxygen in the lungs"};
 
@@ -173,7 +173,7 @@ public class Ch5Vocab extends JPanel {
 								
 								correct = false;
 								answer.setForeground(Color.RED);
-								answer.setText("Wrong\n\n" + all[index][1]);
+								answer.setText("Wrong\n\n" + answer.getText() + "\n\n" + all[index][1]);
 								
 							}
 							
