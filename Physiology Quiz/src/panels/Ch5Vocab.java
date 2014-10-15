@@ -36,7 +36,7 @@ public class Ch5Vocab extends JPanel {
 	
 	static boolean correct = false;
 	
-	static String[] a = new String[]{"Wart","Mass produced by uncontrolled growth of epithelial skin cells"};
+	static String[] a = new String[]{"Wart","Mass produced by uncontrolled growth of epithelial skin cells, caused by a papilloma virus"};
 
 	static String[] b = new String[]{"Topical","medication applied to the skin"};
 
@@ -80,9 +80,9 @@ public class Ch5Vocab extends JPanel {
 
 	static String[] v = new String[]{"Pallor","Paleness of the skin that may occur in conditions such as shock and anemia"};
 
-	static String[] w = new String[]{"Erythema","Redness of the skin caused by engorgement"};
+	static String[] w = new String[]{"Erythema","Redness of the skin caused by engorgement of capillaries in the dermis with blood due to skin injury, exposure to heat, infection, inflammation, or allergic reactions"};
 
-	static String[] x = new String[]{"Jaundice","Due to the buildup of the yellow pigment bilirubin in the skin"};
+	static String[] x = new String[]{"Jaundice","A condition caused by a buildup of the yellow pigment bilirubin in the skin that gives a yellowish appearance tot he skin and the whites of the eyes and usually indicates liver disease"};
 
 	static String[] y = new String[]{"Skin graft","transfer of a patch of healthy skin taken from a donor site to cover a wound"};
 
@@ -133,7 +133,6 @@ public class Ch5Vocab extends JPanel {
 		
 		if(!definitions)
 		{
-		
 			Random r = new Random();
 			
 			index = r.nextInt(all.length);
