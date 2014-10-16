@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import quiz.BonesMenu;
 import quiz.Quiz;
 
 public class LateralSkull extends JPanel{
@@ -28,7 +29,7 @@ public class LateralSkull extends JPanel{
 	private static JTextField cs,pb,tb,ls,ss,ob,zp,eam,mp,sp,mr,ma,mf,m,am,mx,zb,nb,lb,eb,sb,fb;
 	private static Color cc; //Correct color
 	private static Color DARKGREEN;
-	private static JButton mainmenu;
+	private static JButton back;
 	
 	public LateralSkull(Container pane, boolean colorblind)
 	{
@@ -813,9 +814,9 @@ public class LateralSkull extends JPanel{
 			mf.setBounds(715,490,110,25);
 			add(mf);
 			
-			mainmenu = new JButton("Menu");
-			mainmenu.setBounds(750,600,100,50);
-			mainmenu.addActionListener(
+			back = new JButton("Back");
+			back.setBounds(750,600,100,50);
+			back.addActionListener(
 					
 				new ActionListener()
 				{
@@ -823,14 +824,14 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						Quiz.setPanel(panel, Quiz.mm);
+						Quiz.setPanel(panel, BonesMenu.panel);
 						
 					}
 					
 				}
 			
 			);
-			add(mainmenu);
+			add(back);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

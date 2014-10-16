@@ -20,7 +20,7 @@ public class MainMenu extends JPanel
 	 * 
 	 */
 	private static final long serialVersionUID = -564092572158988199L;
-	private static JButton ls,ss,is,as,vq, vd;
+	private static JButton b, vq, vd;
 	private static JCheckBox cb; //Color blind
 	private static boolean colorblind = false;
 	
@@ -52,15 +52,15 @@ public class MainMenu extends JPanel
 		);
 		add(cb);
 		
-		ls = new JButton("Lateral Skull");
-		ls.addActionListener(
+		b = new JButton("Bones");
+		b.addActionListener(
 			new ActionListener()
 			{
 				
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new LateralSkull(pane,colorblind));
+					Quiz.setPanel(panel,new BonesMenu(pane,colorblind));
 					
 				}
 				
@@ -68,8 +68,8 @@ public class MainMenu extends JPanel
 			
 		);
 		
-		ls.setBounds(340,50,200,50);
-		add(ls);
+		b.setBounds(340,50,200,50);
+		add(b);
 		
 		vq = new JButton("Chapter 5 Vocab Quiz");
 		vq.addActionListener(
