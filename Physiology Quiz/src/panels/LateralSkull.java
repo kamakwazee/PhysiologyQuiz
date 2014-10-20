@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -27,9 +28,10 @@ public class LateralSkull extends JPanel{
 	private static final long serialVersionUID = 5404043282314214437L;
 	private static BufferedImage bi;
 	private static JTextField cs,pb,tb,ls,ss,ob,zp,eam,mp,sp,mr,ma,mf,m,am,mx,zb,nb,lb,eb,sb,fb;
+	private static String css,pbs,tbs,lss,sss,obs,zps,eams,mps,sps,mrs,mas,mfs,ms,ams,mxs,zbs,nbs,lbs,ebs,sbs,fbs;
 	private static Color cc; //Correct color
 	private static Color DARKGREEN;
-	private static JButton back;
+	private static JButton back, answers, reset;
 	
 	public LateralSkull(Container pane, boolean colorblind)
 	{
@@ -47,6 +49,29 @@ public class LateralSkull extends JPanel{
 			File f = new File("resources" + File.separator + "LateralSkull.jpg");
 			bi = ImageIO.read(f);
 			
+			css = "Coronal suture";
+			pbs = "Parietal bone";
+			tbs = "Temporal bone";
+			lss = "Lambdoid suture";
+			sss = "Squamous suture";
+			obs = "Occipital bone";
+			zps = "Zygomatic process";
+			eams = "Exterior acoustic meatus";
+			mps = "Mastoid process";
+			sps = "Styloid process";
+			mrs = "Mandibular ramus";
+			mas = "Mandibular angle";
+			fbs = "Frontal bone";
+			sbs = "Sphenoid bone";
+			ebs = "Ethmoid bone";
+			lbs = "Lacrimal bone";
+			nbs = "Nasal bone";
+			zbs = "Zygomatic bone";
+			mxs = "Maxilla";
+			ams = "Alveolar margins";
+			ms = "Mandible";
+			mfs = "Mental foramen";
+			
 			cs = new JTextField();
 			cs.setBackground(Color.WHITE);
 			cs.addActionListener(
@@ -55,7 +80,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(cs.getText().equalsIgnoreCase("Coronal Suture"))
+						if(cs.getText().equalsIgnoreCase(css))
 						{
 							
 							cs.setForeground(cc);
@@ -89,7 +114,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(pb.getText().equalsIgnoreCase("Parietal Bone"))
+						if(pb.getText().equalsIgnoreCase(pbs))
 						{
 							
 							pb.setForeground(cc);
@@ -124,7 +149,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(tb.getText().equalsIgnoreCase("Temporal Bone"))
+						if(tb.getText().equalsIgnoreCase(tbs))
 						{
 							
 							tb.setForeground(cc);
@@ -159,7 +184,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(ls.getText().equalsIgnoreCase("Lambdoid Suture"))
+						if(ls.getText().equalsIgnoreCase(lss))
 						{
 							
 							ls.setForeground(cc);
@@ -194,7 +219,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(ss.getText().equalsIgnoreCase("Squamous Suture"))
+						if(ss.getText().equalsIgnoreCase(sss))
 						{
 							
 							ss.setForeground(cc);
@@ -229,7 +254,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(ob.getText().equalsIgnoreCase("Occipital Bone"))
+						if(ob.getText().equalsIgnoreCase(obs))
 						{
 							
 							ob.setForeground(cc);
@@ -264,7 +289,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(zp.getText().equalsIgnoreCase("Zygomatic Process"))
+						if(zp.getText().equalsIgnoreCase(zps))
 						{
 							
 							zp.setForeground(cc);
@@ -299,7 +324,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(eam.getText().equalsIgnoreCase("Exterior Acoustic Meatus"))
+						if(eam.getText().equalsIgnoreCase(eams))
 						{
 							
 							eam.setForeground(cc);
@@ -334,7 +359,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(mp.getText().equalsIgnoreCase("Mastoid Process"))
+						if(mp.getText().equalsIgnoreCase(mps))
 						{
 							
 							mp.setForeground(cc);
@@ -369,7 +394,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(sp.getText().equalsIgnoreCase("Styloid Process"))
+						if(sp.getText().equalsIgnoreCase(sps))
 						{
 							
 							sp.setForeground(cc);
@@ -404,7 +429,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(mr.getText().equalsIgnoreCase("Mandibular Ramus"))
+						if(mr.getText().equalsIgnoreCase(mrs))
 						{
 							
 							mr.setForeground(cc);
@@ -439,7 +464,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(ma.getText().equalsIgnoreCase("Mandibular Angle"))
+						if(ma.getText().equalsIgnoreCase(mas))
 						{
 							
 							ma.setForeground(cc);
@@ -474,7 +499,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(fb.getText().equalsIgnoreCase("Frontal Bone"))
+						if(fb.getText().equalsIgnoreCase(fbs))
 						{
 							
 							fb.setForeground(cc);
@@ -509,7 +534,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(sb.getText().equalsIgnoreCase("Sphenoid Bone"))
+						if(sb.getText().equalsIgnoreCase(sbs))
 						{
 							
 							sb.setForeground(cc);
@@ -544,7 +569,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(eb.getText().equalsIgnoreCase("Ethmoid Bone"))
+						if(eb.getText().equalsIgnoreCase(ebs))
 						{
 							
 							eb.setForeground(cc);
@@ -579,7 +604,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(lb.getText().equalsIgnoreCase("Lacrimal Bone"))
+						if(lb.getText().equalsIgnoreCase(lbs))
 						{
 							
 							lb.setForeground(cc);
@@ -614,7 +639,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(nb.getText().equalsIgnoreCase("Nasal Bone"))
+						if(nb.getText().equalsIgnoreCase(nbs))
 						{
 							
 							nb.setForeground(cc);
@@ -649,7 +674,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(zb.getText().equalsIgnoreCase("Zygomatic Bone"))
+						if(zb.getText().equalsIgnoreCase(zbs))
 						{
 							
 							zb.setForeground(cc);
@@ -684,7 +709,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(mx.getText().equalsIgnoreCase("Maxilla"))
+						if(mx.getText().equalsIgnoreCase(mxs))
 						{
 							
 							mx.setForeground(cc);
@@ -719,7 +744,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(am.getText().equalsIgnoreCase("Alveolar Margins"))
+						if(am.getText().equalsIgnoreCase(ams))
 						{
 							
 							am.setForeground(cc);
@@ -754,7 +779,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(m.getText().equalsIgnoreCase("Mandible"))
+						if(m.getText().equalsIgnoreCase(ms))
 						{
 							
 							m.setForeground(cc);
@@ -789,7 +814,7 @@ public class LateralSkull extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(mf.getText().equalsIgnoreCase("Mental Foramen"))
+						if(mf.getText().equalsIgnoreCase(mfs))
 						{
 							
 							mf.setForeground(cc);
@@ -832,6 +857,67 @@ public class LateralSkull extends JPanel{
 			
 			);
 			add(back);
+			
+			JTextField[] fields = new JTextField[]{cs,pb,tb,ls,ss,ob,zp,eam,mp,sp,mr,ma,mf,m,am,mx,zb,nb,lb,eb,sb,fb};
+			String[] strings = new String[]{css,pbs,tbs,lss,sss,obs,zps,eams,mps,sps,mrs,mas,mfs,ms,ams,mxs,zbs,nbs,lbs,ebs,sbs,fbs};
+			for(JTextField field : fields)
+			{
+				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+			}
+			
+			answers = new JButton("Answers");
+			answers.setBounds(640,600,100,50);
+			answers.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(int i = 0; i < fields.length; i++)
+						{
+							
+							fields[i].setText(strings[i]);
+							fields[i].setForeground(Color.BLACK);
+							fields[i].setBorder(null);
+							fields[i].setEditable(false);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(answers);
+			
+			reset = new JButton("Reset");
+			reset.setBounds(530,600,100,50);
+			reset.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(JTextField field : fields)
+						{
+							
+							field.setText("");
+							field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+							field.setForeground(Color.BLACK);
+							field.setEditable(true);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(reset);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

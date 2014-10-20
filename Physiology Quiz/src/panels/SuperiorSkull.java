@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -30,7 +31,7 @@ public class SuperiorSkull extends JPanel{
 	static Color DARKGREEN, cc;
 	private static BufferedImage bi;
 	private static String ebs, cps, cgs, sbs, sts, tbs, pbs, obs, fms, fbs, ocs, fos, jfs;
-	private static JButton back;
+	private static JButton back, answers, reset;
 	
 	public SuperiorSkull(Container pane, boolean colorblind)
 	{
@@ -528,6 +529,67 @@ public class SuperiorSkull extends JPanel{
 			
 			);
 			add(back);
+			
+			JTextField[] fields = new JTextField[]{eb, cp, cg, sb, st, tb, pb, ob, fm, fb, oc, fo, jf};
+			String[] strings = new String[]{ebs, cps, cgs, sbs, sts, tbs, pbs, obs, fms, fbs, ocs, fos, jfs};
+			for(JTextField field : fields)
+			{
+				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+			}
+			
+			answers = new JButton("Answers");
+			answers.setBounds(640,600,100,50);
+			answers.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(int i = 0; i < fields.length; i++)
+						{
+							
+							fields[i].setText(strings[i]);
+							fields[i].setForeground(Color.BLACK);
+							fields[i].setBorder(null);
+							fields[i].setEditable(false);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(answers);
+			
+			reset = new JButton("Reset");
+			reset.setBounds(530,600,100,50);
+			reset.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(JTextField field : fields)
+						{
+							
+							field.setText("");
+							field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+							field.setForeground(Color.BLACK);
+							field.setEditable(true);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(reset);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -29,7 +30,7 @@ public class AnteriorSkull extends JPanel {
 	static Color DARKGREEN, cc;
 	private static BufferedImage bi;
 	private static String pbs, nbs, sbs, tbs, ebs, lbs, zbs, mxs, mas, fbs, sofs, ocs, mncs, incs, vs;
-	private static JButton back;
+	private static JButton back, answers, reset;
 	
 	public AnteriorSkull(Container pane, boolean colorblind)
 	{
@@ -562,6 +563,67 @@ public class AnteriorSkull extends JPanel {
 			
 			);
 			add(back);
+			
+			JTextField[] fields = new JTextField[]{pb, nb, sb, tb, eb, lb, zb, mx, ma, fb, sof, oc, mnc, inc, v};
+			String[] strings = new String[]{pbs, nbs, sbs, tbs, ebs, lbs, zbs, mxs, mas, fbs, sofs, ocs, mncs, incs, vs};
+			for(JTextField field : fields)
+			{
+				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+			}
+			
+			answers = new JButton("Answers");
+			answers.setBounds(640,600,100,50);
+			answers.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(int i = 0; i < fields.length; i++)
+						{
+							
+							fields[i].setText(strings[i]);
+							fields[i].setForeground(Color.BLACK);
+							fields[i].setBorder(null);
+							fields[i].setEditable(false);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(answers);
+			
+			reset = new JButton("Reset");
+			reset.setBounds(530,600,100,50);
+			reset.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(JTextField field : fields)
+						{
+							
+							field.setText("");
+							field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+							field.setForeground(Color.BLACK);
+							field.setEditable(true);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(reset);
 			
 		}
 		catch(IOException e)

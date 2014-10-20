@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -29,7 +30,7 @@ public class InferiorSkull extends JPanel {
 	static Color DARKGREEN, cc;
 	private static BufferedImage bi;
 	private static String pbs, zbs, tbs, vs, mfs, sps, mps, pabs, ms, sbs, fos, cacs, jfs, ocs, fms;
-	private static JButton back;
+	private static JButton back, answers, reset;
 	
 	public InferiorSkull(Container pane, boolean colorblind)
 	{
@@ -594,6 +595,74 @@ public class InferiorSkull extends JPanel {
 			
 			);
 			add(back);
+			
+			JTextField[] fields = new JTextField[]{pb, zb, tb, v, mf, sp, mp, tb2, pab, m, sb, fo, cac, jf, oc, fm};
+			String[] strings = new String[]{pbs, zbs, tbs, vs, mfs, sps, mps, pabs, ms, sbs, fos, cacs, jfs, ocs, fms};
+			for(JTextField field : fields)
+			{
+				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+			}
+			
+			answers = new JButton("Answers");
+			answers.setBounds(640,600,100,50);
+			answers.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(int i = 0, ii = 0; i < fields.length && ii < strings.length; i++, ii++)
+						{
+							if(fields[i] == tb2)
+							{
+								fields[i].setText(tbs);
+								--ii;
+							}
+							else
+							{
+								fields[i].setText(strings[ii]);
+							}
+							fields[i].setForeground(Color.BLACK);
+							fields[i].setBorder(null);
+							fields[i].setEditable(false);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(answers);
+			
+			reset = new JButton("Reset");
+			reset.setBounds(530,600,100,50);
+			reset.addActionListener(
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						for(JTextField field : fields)
+						{
+							
+							field.setText("");
+							field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+							field.setForeground(Color.BLACK);
+							field.setEditable(true);
+							
+						}
+						
+					}
+					
+					
+					
+				}
+			);
+			add(reset);
 			
 		}
 		catch(IOException e)
