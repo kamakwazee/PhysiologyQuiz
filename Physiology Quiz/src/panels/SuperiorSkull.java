@@ -29,6 +29,7 @@ public class SuperiorSkull extends JPanel{
 	static JTextField eb, cp, cg, sb, st, tb, pb, ob, fm, fb, oc, fo, jf;
 	static Color DARKGREEN, cc;
 	private static BufferedImage bi;
+	private static String ebs, cps, cgs, sbs, sts, tbs, pbs, obs, fms, fbs, ocs, fos, jfs;
 	
 	public SuperiorSkull(Container pane, boolean colorblind)
 	{
@@ -38,6 +39,19 @@ public class SuperiorSkull extends JPanel{
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
 		DARKGREEN = new Color(0,153,0);
+		ebs = "Ethmoid Bone";
+		cps = "Cribriform plate";
+		cgs = "Crista galli";
+		sbs = "Sphenoid bone";
+		sts = "Sella turcica";
+		tbs = "Temporal bone";
+		pbs = "Parietal bone";
+		obs = "Occipital bone";
+		fms = "Foramen magnum";
+		fbs = "Frontal bone";
+		ocs = "Optic canal";
+		fos = "Forumen ovale";
+		jfs = "Jugular foramen";
 		if(colorblind)
 			cc = Color.BLUE;
 		else
@@ -47,26 +61,26 @@ public class SuperiorSkull extends JPanel{
 			File f = new File("resources" + File.separator + "SuperiorSkull.jpg");
 			bi = ImageIO.read(f);
 			
-			/*cs = new JTextField();
-			cs.setBackground(Color.WHITE);
-			cs.addActionListener(
+			eb = new JTextField();
+			eb.setBackground(Color.WHITE);
+			eb.addActionListener(
 				new ActionListener(){
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(cs.getText().equalsIgnoreCase("Coronal Suture"))
+						if(eb.getText().equalsIgnoreCase(ebs))
 						{
 							
-							cs.setForeground(cc);
-							cs.setBorder(null);
-							cs.setEditable(false);
+							eb.setForeground(cc);
+							eb.setBorder(null);
+							eb.setEditable(false);
 							
 						}
 						else
 						{
 							
-							cs.setForeground(Color.RED);
+							eb.setForeground(Color.RED);
 							
 						}
 						
@@ -76,9 +90,104 @@ public class SuperiorSkull extends JPanel{
 					
 			);
 			
-			cs.setBounds(95,108,110,25);
-			add(cs);*/
+			eb.setBounds(50,87,110,25);
+			add(eb);
 			
+			cp = new JTextField();
+			cp.setBackground(Color.WHITE);
+			cp.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(cp.getText().equalsIgnoreCase(cps))
+						{
+							
+							cp.setForeground(cc);
+							cp.setBorder(null);
+							cp.setEditable(false);
+							
+						}
+						else
+						{
+							
+							cp.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			cp.setBounds(185,80,100,25);
+			add(cp);
+			
+			cg = new JTextField();
+			cg.setBackground(Color.WHITE);
+			cg.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(cg.getText().equalsIgnoreCase(cgs))
+						{
+							
+							cg.setForeground(cc);
+							cg.setBorder(null);
+							cg.setEditable(false);
+							
+						}
+						else
+						{
+							
+							cg.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			cg.setBounds(185,110,100,25);
+			add(cg);
+			
+			sb = new JTextField();
+			sb.setBackground(Color.WHITE);
+			sb.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(sb.getText().equalsIgnoreCase(sbs))
+						{
+							
+							sb.setForeground(cc);
+							sb.setBorder(null);
+							sb.setEditable(false);
+							
+						}
+						else
+						{
+							
+							sb.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			sb.setBounds(80,200,100,25);
+			add(sb);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
