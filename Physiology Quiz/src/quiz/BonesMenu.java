@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import panels.AnteriorSkull;
 import panels.InferiorSkull;
 import panels.LateralSkull;
 import panels.SuperiorSkull;
@@ -85,6 +86,25 @@ public class BonesMenu extends JPanel{
 		
 		is.setBounds(340,170,200,50);
 		add(is);
+		
+		as = new JButton("Anterior Skull");
+		as.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new AnteriorSkull(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		as.setBounds(340,230,200,50);
+		add(as);
 		
 		back = new JButton("Back");
 		back.setBounds(750,600,100,50);

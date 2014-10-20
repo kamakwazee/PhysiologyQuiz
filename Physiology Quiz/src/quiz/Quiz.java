@@ -5,8 +5,6 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import panels.InferiorSkull;
-
 public class Quiz{
 
 	public static JFrame jf;
