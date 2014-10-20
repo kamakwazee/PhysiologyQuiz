@@ -30,6 +30,7 @@ public class SuperiorSkull extends JPanel{
 	static Color DARKGREEN, cc;
 	private static BufferedImage bi;
 	private static String ebs, cps, cgs, sbs, sts, tbs, pbs, obs, fms, fbs, ocs, fos, jfs;
+	private static JButton back;
 	
 	public SuperiorSkull(Container pane, boolean colorblind)
 	{
@@ -186,8 +187,347 @@ public class SuperiorSkull extends JPanel{
 					
 			);
 			
-			sb.setBounds(80,200,100,25);
+			sb.setBounds(120,170,100,25);
 			add(sb);
+			
+			st = new JTextField();
+			st.setBackground(Color.WHITE);
+			st.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(st.getText().equalsIgnoreCase(sts))
+						{
+							
+							st.setForeground(cc);
+							st.setBorder(null);
+							st.setEditable(false);
+							
+						}
+						else
+						{
+							
+							st.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			st.setBounds(110,230,100,25);
+			add(st);
+			
+			st = new JTextField();
+			st.setBackground(Color.WHITE);
+			st.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(st.getText().equalsIgnoreCase(sts))
+						{
+							
+							st.setForeground(cc);
+							st.setBorder(null);
+							st.setEditable(false);
+							
+						}
+						else
+						{
+							
+							st.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			st.setBounds(110,230,100,25);
+			add(st);
+			
+			tb = new JTextField();
+			tb.setBackground(Color.WHITE);
+			tb.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(tb.getText().equalsIgnoreCase(tbs))
+						{
+							
+							tb.setForeground(cc);
+							tb.setBorder(null);
+							tb.setEditable(false);
+							
+						}
+						else
+						{
+							
+							tb.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			tb.setBounds(100,325,100,25);
+			add(tb);
+			
+			pb = new JTextField();
+			pb.setBackground(Color.WHITE);
+			pb.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(pb.getText().equalsIgnoreCase(pbs))
+						{
+							
+							pb.setForeground(cc);
+							pb.setBorder(null);
+							pb.setEditable(false);
+							
+						}
+						else
+						{
+							
+							pb.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			pb.setBounds(90,455,100,25);
+			add(pb);
+			
+			ob = new JTextField();
+			ob.setBackground(Color.WHITE);
+			ob.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(ob.getText().equalsIgnoreCase(obs))
+						{
+							
+							ob.setForeground(cc);
+							ob.setBorder(null);
+							ob.setEditable(false);
+							
+						}
+						else
+						{
+							
+							ob.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			ob.setBounds(100,500,100,25);
+			add(ob);
+			
+			fm = new JTextField();
+			fm.setBackground(Color.WHITE);
+			fm.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(fm.getText().equalsIgnoreCase(fms))
+						{
+							
+							fm.setForeground(cc);
+							fm.setBorder(null);
+							fm.setEditable(false);
+							
+						}
+						else
+						{
+							
+							fm.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			fm.setBounds(200,545,120,25);
+			add(fm);
+			
+			fb = new JTextField();
+			fb.setBackground(Color.WHITE);
+			fb.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(fb.getText().equalsIgnoreCase(fbs))
+						{
+							
+							fb.setForeground(cc);
+							fb.setBorder(null);
+							fb.setEditable(false);
+							
+						}
+						else
+						{
+							
+							fb.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			fb.setBounds(715,95,110,25);
+			add(fb);
+			
+			oc = new JTextField();
+			oc.setBackground(Color.WHITE);
+			oc.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(oc.getText().equalsIgnoreCase(ocs))
+						{
+							
+							oc.setForeground(cc);
+							oc.setBorder(null);
+							oc.setEditable(false);
+							
+						}
+						else
+						{
+							
+							oc.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			oc.setBounds(715,175,110,25);
+			add(oc);
+			
+			fo = new JTextField();
+			fo.setBackground(Color.WHITE);
+			fo.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(fo.getText().equalsIgnoreCase(fos))
+						{
+							
+							fo.setForeground(cc);
+							fo.setBorder(null);
+							fo.setEditable(false);
+							
+						}
+						else
+						{
+							
+							fo.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			fo.setBounds(715,235,110,25);
+			add(fo);
+			
+			jf = new JTextField();
+			jf.setBackground(Color.WHITE);
+			jf.addActionListener(
+				new ActionListener(){
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(jf.getText().equalsIgnoreCase(jfs))
+						{
+							
+							jf.setForeground(cc);
+							jf.setBorder(null);
+							jf.setEditable(false);
+							
+						}
+						else
+						{
+							
+							jf.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+				}
+					
+			);
+			
+			jf.setBounds(715,405,110,25);
+			add(jf);
+			
+			back = new JButton("Back");
+			back.setBounds(750,600,100,50);
+			back.addActionListener(
+					
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						Quiz.setPanel(panel, BonesMenu.panel);
+						
+					}
+					
+				}
+			
+			);
+			add(back);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

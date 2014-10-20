@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import panels.LateralSkull;
+import panels.SuperiorSkull;
 
 public class BonesMenu extends JPanel{
 	
@@ -45,6 +46,25 @@ public class BonesMenu extends JPanel{
 		
 		ls.setBounds(340,50,200,50);
 		add(ls);
+		
+		ss = new JButton("Superior Skull");
+		ss.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new SuperiorSkull(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		ss.setBounds(340,110,200,50);
+		add(ss);
 		
 		back = new JButton("Back");
 		back.setBounds(750,600,100,50);
