@@ -12,6 +12,7 @@ import panels.AnteriorSkull;
 import panels.InferiorSkull;
 import panels.LateralSkull;
 import panels.SuperiorSkull;
+import panels.Vertebra;
 
 public class BonesMenu extends JPanel{
 	
@@ -19,7 +20,7 @@ public class BonesMenu extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 5986396967330163229L;
-	static JButton ls,ss,is,as,back;
+	static JButton ls,ss,is,as,v,back;
 	public static JPanel panel;
 	
 	
@@ -105,6 +106,25 @@ public class BonesMenu extends JPanel{
 		
 		as.setBounds(340,230,200,50);
 		add(as);
+		
+		v = new JButton("Vertebra");
+		v.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new Vertebra(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		v.setBounds(340,290,200,50);
+		add(v);
 		
 		back = new JButton("Back");
 		back.setBounds(750,600,100,50);
