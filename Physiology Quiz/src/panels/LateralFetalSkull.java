@@ -20,80 +20,51 @@ import javax.swing.JTextField;
 import quiz.BonesMenu;
 import quiz.Quiz;
 
-public class SuperiorFetalSkull extends JPanel{
+public class LateralFetalSkull extends JPanel {
 
-	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2485035365327738440L;
-	static JTextField fb,pb,pf,af,ob;
-	static Color DARKGREEN, cc;
+	private static final long serialVersionUID = 860816932223980393L;
 	private static BufferedImage bi;
-	private static String[] fbs,pbs,pfs,afs,obs;
+	private static JTextField pb,pf,ob,mf,tb,af,sf,fb;
+	private static String[] pbs,pfs,obs,mfs,tbs,afs,sfs,fbs;
+	private static Color cc; //Correct color
+	private static Color DARKGREEN;
 	private static JButton back, answers1, answers2, reset;
 	
-	public SuperiorFetalSkull(Container pane, boolean colorblind)
+	public LateralFetalSkull(Container pane, boolean colorblind)
 	{
-		
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
 		DARKGREEN = new Color(0,153,0);
-		
-		fbs = new String[]{"Frontal bone"};
-		pbs = new String[]{"Parietal bone"};
-		pfs = new String[]{"Posterior fontanel", "Occipital fontanel"};
-		afs = new String[]{"Anterior fontanel", "Frontal fontanel"};
-		obs = new String[]{"Occipital bone"};
-		
 		if(colorblind)
 			cc = Color.BLUE;
 		else
 			cc = DARKGREEN;
 		
 		try {
-			File f = new File("resources" + File.separator + "SuperiorFetalSkull.jpg");
+			File f = new File("resources" + File.separator + "LateralFetalSkull.jpg");
 			bi = ImageIO.read(f);
 			
-			fb = new JTextField();
-			fb.setBackground(Color.WHITE);
-			fb.addActionListener(
-				new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						if(textInArray(fb,fbs))
-						{
-							
-							fb.setForeground(cc);
-							fb.setBorder(null);
-							fb.setEditable(false);
-							
-						}
-						else
-						{
-							
-							fb.setForeground(Color.RED);
-							
-						}
-						
-					}
-					
-				}
-					
-			);
-			
-			fb.setBounds(130,190,110,25);
-			add(fb);
+			pbs = new String[]{"Parietal bone"};
+			pfs = new String[]{"Posterior fontanel","Occipital fontanel"};
+			obs = new String[]{"Occipital bone"};
+			mfs = new String[]{"Posterolateral fontanel","Mastoid fontanel"};
+			tbs = new String[]{"Temporal bone"};
+			afs = new String[]{"Anterior fontanel","Frontal fontanel"};
+			sfs = new String[]{"Anterolateral fontanel","Sphenoidal fontanel"};
+			fbs = new String[]{"Frontal bone"};
 			
 			pb = new JTextField();
 			pb.setBackground(Color.WHITE);
 			pb.addActionListener(
-				new ActionListener(){
-					
+				
+				new ActionListener()
+				{
+
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
@@ -114,18 +85,21 @@ public class SuperiorFetalSkull extends JPanel{
 						
 					}
 					
+					
 				}
 					
 			);
 			
-			pb.setBounds(80,325,110,25);
+			pb.setBounds(190,200,110,25);
 			add(pb);
 			
 			pf = new JTextField();
 			pf.setBackground(Color.WHITE);
 			pf.addActionListener(
-				new ActionListener(){
-					
+				
+				new ActionListener()
+				{
+
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
@@ -146,50 +120,21 @@ public class SuperiorFetalSkull extends JPanel{
 						
 					}
 					
+					
 				}
 					
 			);
 			
-			pf.setBounds(165,460,125,25);
+			pf.setBounds(130,280,130,25);
 			add(pf);
-			
-			af = new JTextField();
-			af.setBackground(Color.WHITE);
-			af.addActionListener(
-				new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						if(textInArray(af,afs))
-						{
-							
-							af.setForeground(cc);
-							af.setBorder(null);
-							af.setEditable(false);
-							
-						}
-						else
-						{
-							
-							af.setForeground(Color.RED);
-							
-						}
-						
-					}
-					
-				}
-					
-			);
-			
-			af.setBounds(590,145,125,25);
-			add(af);
 			
 			ob = new JTextField();
 			ob.setBackground(Color.WHITE);
 			ob.addActionListener(
-				new ActionListener(){
-					
+				
+				new ActionListener()
+				{
+
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
@@ -210,12 +155,188 @@ public class SuperiorFetalSkull extends JPanel{
 						
 					}
 					
+					
 				}
 					
 			);
 			
-			ob.setBounds(590,485,110,25);
+			ob.setBounds(140,390,110,25);
 			add(ob);
+			
+			mf = new JTextField();
+			mf.setBackground(Color.WHITE);
+			mf.addActionListener(
+				
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(textInArray(mf,mfs))
+						{
+							
+							mf.setForeground(cc);
+							mf.setBorder(null);
+							mf.setEditable(false);
+							
+						}
+						else
+						{
+							
+							mf.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+					
+				}
+					
+			);
+			
+			mf.setBounds(80,450,160,25);
+			add(mf);
+			
+			tb = new JTextField();
+			tb.setBackground(Color.WHITE);
+			tb.addActionListener(
+				
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(textInArray(tb,tbs))
+						{
+							
+							tb.setForeground(cc);
+							tb.setBorder(null);
+							tb.setEditable(false);
+							
+						}
+						else
+						{
+							
+							tb.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+					
+				}
+					
+			);
+			
+			tb.setBounds(370,500,110,25);
+			add(tb);
+			
+			af = new JTextField();
+			af.setBackground(Color.WHITE);
+			af.addActionListener(
+				
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(textInArray(af,afs))
+						{
+							
+							af.setForeground(cc);
+							af.setBorder(null);
+							af.setEditable(false);
+							
+						}
+						else
+						{
+							
+							af.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+					
+				}
+					
+			);
+			
+			af.setBounds(420,145,130,25);
+			add(af);
+			
+			sf = new JTextField();
+			sf.setBackground(Color.WHITE);
+			sf.addActionListener(
+				
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(textInArray(sf,sfs))
+						{
+							
+							sf.setForeground(cc);
+							sf.setBorder(null);
+							sf.setEditable(false);
+							
+						}
+						else
+						{
+							
+							sf.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+					
+				}
+					
+			);
+			
+			sf.setBounds(590,180,150,25);
+			add(sf);
+			
+			fb = new JTextField();
+			fb.setBackground(Color.WHITE);
+			fb.addActionListener(
+				
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						if(textInArray(fb,fbs))
+						{
+							
+							fb.setForeground(cc);
+							fb.setBorder(null);
+							fb.setEditable(false);
+							
+						}
+						else
+						{
+							
+							fb.setForeground(Color.RED);
+							
+						}
+						
+					}
+					
+					
+				}
+					
+			);
+			
+			fb.setBounds(630,235,110,25);
+			add(fb);
 			
 			back = new JButton("Back");
 			back.setBounds(740,600,110,50);
@@ -236,12 +357,12 @@ public class SuperiorFetalSkull extends JPanel{
 			);
 			add(back);
 			
-			JTextField[] fields = new JTextField[]{fb,pb,pf,af,ob};
-			String[][] strings = new String[][]{fbs,pbs,pfs,afs,obs};
-			for(JTextField field : fields)
+			JTextField[] fields = new JTextField[]{pb,pf,ob,mf,tb,af,sf,fb};
+			String[][] strings = new String[][]{pbs,pfs,obs,mfs,tbs,afs,sfs,fbs};
+			/*for(JTextField field : fields)
 			{
 				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-			}
+			}*/
 			
 			answers1 = new JButton("Answers 1");
 			answers1.setBounds(500,600,110,50);
@@ -331,7 +452,6 @@ public class SuperiorFetalSkull extends JPanel{
 			e.printStackTrace();
 		}
 		
-		
 	}
 	
 	private static boolean textInArray(JTextField field, String[] text)
@@ -349,7 +469,6 @@ public class SuperiorFetalSkull extends JPanel{
 		
 	}
 	
-	
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
@@ -360,5 +479,5 @@ public class SuperiorFetalSkull extends JPanel{
 		g.drawImage(bi,67,59,this);
 		
 	}
-	
+
 }
