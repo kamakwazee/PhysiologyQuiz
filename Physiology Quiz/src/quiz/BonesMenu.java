@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import panels.AnteriorSkull;
+import panels.Arm;
 import panels.InferiorSkull;
 import panels.LateralFetalSkull;
 import panels.LateralSkull;
@@ -24,7 +25,7 @@ public class BonesMenu extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 5986396967330163229L;
-	static JButton sg1,sg2,ls,lf,ss,sf,is,as,v,back;
+	static JButton sg1,sg2,arm,ls,lf,ss,sf,is,as,v,back;
 	public static JPanel panel;
 	
 	
@@ -72,6 +73,25 @@ public class BonesMenu extends JPanel{
 		
 		sg2.setBounds(130,110,200,50);
 		add(sg2);
+		
+		arm = new JButton("Arm");
+		arm.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new Arm(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		arm.setBounds(130,170,200,50);
+		add(arm);
 		
 		ls = new JButton("Lateral Skull");
 		ls.addActionListener(
