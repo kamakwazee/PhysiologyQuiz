@@ -12,6 +12,8 @@ import panels.AnteriorSkull;
 import panels.InferiorSkull;
 import panels.LateralFetalSkull;
 import panels.LateralSkull;
+import panels.ShoulderGirdle1;
+import panels.ShoulderGirdle2;
 import panels.SuperiorFetalSkull;
 import panels.SuperiorSkull;
 import panels.Vertebra;
@@ -22,7 +24,7 @@ public class BonesMenu extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 5986396967330163229L;
-	static JButton ls,lf,ss,sf,is,as,v,back;
+	static JButton sg1,sg2,ls,lf,ss,sf,is,as,v,back;
 	public static JPanel panel;
 	
 	
@@ -32,6 +34,44 @@ public class BonesMenu extends JPanel{
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
+		
+		sg1 = new JButton("Shoulder Girdle 1");
+		sg1.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new ShoulderGirdle1(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		sg1.setBounds(130,50,200,50);
+		add(sg1);
+		
+		sg2 = new JButton("Shoulder Girdle 2");
+		sg2.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new ShoulderGirdle2(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		sg2.setBounds(130,110,200,50);
+		add(sg2);
 		
 		ls = new JButton("Lateral Skull");
 		ls.addActionListener(
