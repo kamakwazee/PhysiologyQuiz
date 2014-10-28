@@ -10,10 +10,12 @@ import javax.swing.JPanel;
 
 import panels.AnteriorSkull;
 import panels.Arm;
+import panels.Foot;
 import panels.Hand;
 import panels.InferiorSkull;
 import panels.LateralFetalSkull;
 import panels.LateralSkull;
+import panels.Leg;
 import panels.Pelvis1;
 import panels.Pelvis2;
 import panels.ShoulderGirdle1;
@@ -28,7 +30,7 @@ public class BonesMenu extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 5986396967330163229L;
-	static JButton sg1,sg2,arm,hand,p1,p2,ls,lf,ss,sf,is,as,v,back;
+	static JButton sg1,sg2,arm,hand,p1,p2,ls,lf,ss,sf,is,as,v,leg,foot,back;
 	public static JPanel panel;
 	
 	
@@ -285,6 +287,44 @@ public class BonesMenu extends JPanel{
 		
 		sf.setBounds(550,110,200,50);
 		add(sf);
+		
+		leg = new JButton("Leg");
+		leg.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new Leg(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		leg.setBounds(550,170,200,50);
+		add(leg);
+		
+		foot = new JButton("Foot");
+		foot.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel,new Foot(pane,colorblind));
+					
+				}
+				
+			}
+			
+		);
+		
+		foot.setBounds(550,230,200,50);
+		add(foot);
 		
 		back = new JButton("Back");
 		back.setBounds(750,600,100,50);
