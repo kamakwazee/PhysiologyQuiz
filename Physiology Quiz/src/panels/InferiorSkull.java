@@ -52,7 +52,7 @@ public class InferiorSkull extends JPanel {
 		ms = "Maxilla";
 		sbs = "Sphenoid bone";
 		fos = "Foramen ovale";
-		cacs = "Cartoid canal";
+		cacs = "Carotid canal";
 		jfs = "Jugular foramen";
 		ocs = "Occipital condyle";
 		fms = "Foramen magnum";
