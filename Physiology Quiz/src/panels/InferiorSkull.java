@@ -29,7 +29,7 @@ public class InferiorSkull extends JPanel {
 	static JTextField pb, zb, tb, v, mf, sp, mp, tb2, pab, m, sb, fo, cac, jf, oc, fm;
 	static Color DARKGREEN, cc;
 	private static BufferedImage bi;
-	private static String pbs, zbs, tbs, vs, mfs, sps, mps, pabs, ms, sbs, fos, cacs, jfs, ocs, fms;
+	private static String pbs, zbs, tbs, vs, mfs, sps, mps, pabs, ms, sbs, fos, cacs, jfs, ocs, fms, tb2s;
 	private static JButton back, answers, reset;
 	
 	public InferiorSkull(Container pane, boolean colorblind)
@@ -42,7 +42,7 @@ public class InferiorSkull extends JPanel {
 		
 		pbs = "Palatine bone";
 		zbs = "Zygomatic bone";
-		tbs = "Temporal bone";
+		tbs = tb2s = "Temporal bone";
 		vs = "Vomer";
 		mfs = "Mandibular fossa";
 		sps = "Styloid process";
@@ -597,10 +597,67 @@ public class InferiorSkull extends JPanel {
 			add(back);
 			
 			JTextField[] fields = new JTextField[]{pb, zb, tb, v, mf, sp, mp, tb2, pab, m, sb, fo, cac, jf, oc, fm};
-			String[] strings = new String[]{pbs, zbs, tbs, vs, mfs, sps, mps, pabs, ms, sbs, fos, cacs, jfs, ocs, fms};
+			String[] strings = new String[]{pbs, zbs, tbs, vs, mfs, sps, mps, tb2s, pabs, ms, sbs, fos, cacs, jfs, ocs, fms};
 			for(JTextField field : fields)
 			{
 				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+				field.addActionListener(
+					new ActionListener()
+					{
+						
+						public void actionPerformed(ActionEvent e)
+						{
+							for(int i = 0; i < fields.length; i++)
+							{
+								
+								if((JTextField) e.getSource() == fields[i])
+								{
+									if(fields[i].getText().equalsIgnoreCase(strings[i]))
+									{
+										boolean found = false;
+										
+										for(int ii = i; ii < fields.length; ii++)
+										{
+											
+											if(ii != fields.length-1 && !found)
+											{
+												if(fields[ii].getText().equalsIgnoreCase(""))
+												{
+													fields[ii].requestFocusInWindow();
+													found = true;
+													
+												}
+											}
+											
+										}
+										if(!found)
+										{
+											for(int ii = 0; ii < i; ii++)
+											{
+												if(!found)
+												{
+													if(fields[ii].getText().equals(""))
+													{
+														
+														fields[ii].requestFocusInWindow();
+														found = true;
+														
+													}
+												}
+												
+											}
+											
+										}
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+				);
 			}
 			
 			answers = new JButton("Answers");
@@ -612,17 +669,10 @@ public class InferiorSkull extends JPanel {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						for(int i = 0, ii = 0; i < fields.length && ii < strings.length; i++, ii++)
+						for(int i = 0; i < fields.length; i++)
 						{
-							if(fields[i] == tb2)
-							{
-								fields[i].setText(tbs);
-								--ii;
-							}
-							else
-							{
-								fields[i].setText(strings[ii]);
-							}
+							
+							fields[i].setText(strings[i]);
 							fields[i].setForeground(Color.BLACK);
 							fields[i].setBorder(null);
 							fields[i].setEditable(false);

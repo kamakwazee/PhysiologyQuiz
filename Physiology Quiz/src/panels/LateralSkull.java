@@ -32,6 +32,7 @@ public class LateralSkull extends JPanel{
 	private static Color cc; //Correct color
 	private static Color DARKGREEN;
 	private static JButton back, answers, reset;
+	private static int fi;
 	
 	public LateralSkull(Container pane, boolean colorblind)
 	{
@@ -863,6 +864,63 @@ public class LateralSkull extends JPanel{
 			for(JTextField field : fields)
 			{
 				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+				field.addActionListener(
+					new ActionListener()
+					{
+						
+						public void actionPerformed(ActionEvent e)
+						{
+							for(int i = 0; i < fields.length; i++)
+							{
+								
+								if((JTextField) e.getSource() == fields[i])
+								{
+									if(fields[i].getText().equalsIgnoreCase(strings[i]))
+									{
+										boolean found = false;
+										
+										for(int ii = i; ii < fields.length; ii++)
+										{
+											
+											if(ii != fields.length-1 && !found)
+											{
+												if(fields[ii].getText().equalsIgnoreCase(""))
+												{
+													fields[ii].requestFocusInWindow();
+													found = true;
+													
+												}
+											}
+											
+										}
+										if(!found)
+										{
+											for(int ii = 0; ii < i; ii++)
+											{
+												if(!found)
+												{
+													if(fields[ii].getText().equals(""))
+													{
+														
+														fields[ii].requestFocusInWindow();
+														found = true;
+														
+													}
+												}
+												
+											}
+											
+										}
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+				);
 			}
 			
 			answers = new JButton("Answers");
