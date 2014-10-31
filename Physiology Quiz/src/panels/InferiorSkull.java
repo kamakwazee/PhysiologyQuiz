@@ -42,7 +42,8 @@ public class InferiorSkull extends JPanel {
 		
 		pbs = "Palatine bone";
 		zbs = "Zygomatic bone";
-		tbs = tb2s = "Temporal bone";
+		tbs = "Zygomatic process";
+		tb2s = "Temporal bone";
 		vs = "Vomer";
 		mfs = "Mandibular fossa";
 		sps = "Styloid process";
@@ -158,7 +159,7 @@ public class InferiorSkull extends JPanel {
 					
 			);
 			
-			tb.setBounds(90,220,110,25);
+			tb.setBounds(70,220,130,25);
 			add(tb);
 			
 			v = new JTextField();
@@ -619,7 +620,7 @@ public class InferiorSkull extends JPanel {
 										for(int ii = i; ii < fields.length; ii++)
 										{
 											
-											if(ii != fields.length-1 && !found)
+											if(!found)
 											{
 												if(fields[ii].getText().equalsIgnoreCase(""))
 												{

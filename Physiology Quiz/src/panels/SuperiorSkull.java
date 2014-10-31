@@ -521,7 +521,7 @@ public class SuperiorSkull extends JPanel{
 										for(int ii = i; ii < fields.length; ii++)
 										{
 											
-											if(ii != fields.length-1 && !found)
+											if(!found)
 											{
 												if(fields[ii].getText().equalsIgnoreCase(""))
 												{

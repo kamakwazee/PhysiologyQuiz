@@ -69,7 +69,7 @@ public class LateralSkull extends JPanel{
 			nbs = "Nasal bone";
 			zbs = "Zygomatic bone";
 			mxs = "Maxilla";
-			ams = "Alveolar margins";
+			ams = "Alveolar processes";
 			ms = "Mandible";
 			mfs = "Mental foramen";
 			
@@ -767,7 +767,7 @@ public class LateralSkull extends JPanel{
 					
 			);
 			
-			am.setBounds(715,420,110,25);
+			am.setBounds(715,420,130,25);
 			add(am);
 			
 			m = new JTextField();
@@ -882,7 +882,7 @@ public class LateralSkull extends JPanel{
 										for(int ii = i; ii < fields.length; ii++)
 										{
 											
-											if(ii != fields.length-1 && !found)
+											if(!found)
 											{
 												if(fields[ii].getText().equalsIgnoreCase(""))
 												{
