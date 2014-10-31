@@ -52,7 +52,7 @@ public class SuperiorSkull extends JPanel{
 		fms = "Foramen magnum";
 		fbs = "Frontal bone";
 		ocs = "Optic canal";
-		fos = "Forumen ovale";
+		fos = "Foramen ovale";
 		jfs = "Jugular foramen";
 		if(colorblind)
 			cc = Color.BLUE;
@@ -190,38 +190,6 @@ public class SuperiorSkull extends JPanel{
 			
 			sb.setBounds(120,170,100,25);
 			add(sb);
-			
-			st = new JTextField();
-			st.setBackground(Color.WHITE);
-			st.addActionListener(
-				new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						if(st.getText().equalsIgnoreCase(sts))
-						{
-							
-							st.setForeground(cc);
-							st.setBorder(null);
-							st.setEditable(false);
-							
-						}
-						else
-						{
-							
-							st.setForeground(Color.RED);
-							
-						}
-						
-					}
-					
-				}
-					
-			);
-			
-			st.setBounds(110,230,100,25);
-			add(st);
 			
 			st = new JTextField();
 			st.setBackground(Color.WHITE);

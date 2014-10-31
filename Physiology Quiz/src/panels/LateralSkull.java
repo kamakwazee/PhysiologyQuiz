@@ -56,7 +56,7 @@ public class LateralSkull extends JPanel{
 			sss = "Squamous suture";
 			obs = "Occipital bone";
 			zps = "Zygomatic process";
-			eams = "Exterior acoustic meatus";
+			eams = "External auditory meatus";
 			mps = "Mastoid process";
 			sps = "Styloid process";
 			mrs = "Mandibular ramus";
