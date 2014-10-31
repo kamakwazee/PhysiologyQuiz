@@ -298,7 +298,7 @@ public class InferiorSkull extends JPanel {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
-						if(tb2.getText().equalsIgnoreCase(tbs))
+						if(tb2.getText().equalsIgnoreCase(tb2s))
 						{
 							
 							tb2.setForeground(cc);
