@@ -291,6 +291,93 @@ public class Vertebra extends JPanel {
 			sapf.setBackground(Color.WHITE);
 			sapf.setLineWrap(true);
 			sapf.setWrapStyleWord(true);
+			
+			back = new JButton("Back");
+			back.setBounds(750,600,100,50);
+			back.addActionListener(
+					
+				new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						Quiz.setPanel(panel, BonesMenu.panel);
+						
+					}
+					
+				}
+			
+			);
+			add(back);
+			
+			JTextField[] fields = new JTextField[]{tp, l, sp, va, vf, b, p};
+			String[] strings = new String[]{tps, ls, sps, vas, vfs, bs, ps};
+			for(JTextField field : fields)
+			{
+				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+				field.addActionListener(
+					new ActionListener()
+					{
+						
+						public void actionPerformed(ActionEvent e)
+						{
+							if((JTextField) e.getSource() == p && sapf.getText().isEmpty())
+							{
+								sapf.requestFocusInWindow();
+							}
+							for(int i = 0; i < fields.length; i++)
+							{
+								
+								if((JTextField) e.getSource() == fields[i])
+								{
+									if(fields[i].getText().equalsIgnoreCase(strings[i]))
+									{
+										boolean found = false;
+										
+										for(int ii = i; ii < fields.length; ii++)
+										{
+											
+											if(!found)
+											{
+												if(fields[ii].getText().equalsIgnoreCase(""))
+												{
+													fields[ii].requestFocusInWindow();
+													found = true;
+													
+												}
+											}
+											
+										}
+										if(!found)
+										{
+											for(int ii = 0; ii < i; ii++)
+											{
+												if(!found)
+												{
+													if(fields[ii].getText().equals(""))
+													{
+														
+														fields[ii].requestFocusInWindow();
+														found = true;
+														
+													}
+												}
+												
+											}
+											
+										}
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+				);
+			}
 			sapf.addKeyListener(
 				new KeyListener()
 				{
@@ -305,6 +392,15 @@ public class Vertebra extends JPanel {
 								sapf.setForeground(cc);
 								sapf.setBorder(null);
 								sapf.setEditable(false);
+									for(int i = 0; i < fields.length; i++)
+									{
+										if(fields[i].getText().equalsIgnoreCase(""))
+										{
+											fields[i].requestFocusInWindow();
+											
+										}
+									}
+									
 							}
 							else
 							{
@@ -332,32 +428,6 @@ public class Vertebra extends JPanel {
 			);
 			sapf.setBounds(130,320,130,40);
 			add(sapf);
-			
-			back = new JButton("Back");
-			back.setBounds(750,600,100,50);
-			back.addActionListener(
-					
-				new ActionListener()
-				{
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						Quiz.setPanel(panel, BonesMenu.panel);
-						
-					}
-					
-				}
-			
-			);
-			add(back);
-			
-			JTextField[] fields = new JTextField[]{tp, l, sp, va, vf, b, p};
-			String[] strings = new String[]{tps, ls, sps, vas, vfs, bs, ps};
-			for(JTextField field : fields)
-			{
-				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-			}
 			sapf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 			
 			answers = new JButton("Answers");

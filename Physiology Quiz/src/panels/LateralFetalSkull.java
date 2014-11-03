@@ -359,10 +359,67 @@ public class LateralFetalSkull extends JPanel {
 			
 			JTextField[] fields = new JTextField[]{pb,pf,ob,mf,tb,af,sf,fb};
 			String[][] strings = new String[][]{pbs,pfs,obs,mfs,tbs,afs,sfs,fbs};
-			/*for(JTextField field : fields)
+			for(JTextField field : fields)
 			{
 				field.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-			}*/
+				field.addActionListener(
+					new ActionListener()
+					{
+						
+						public void actionPerformed(ActionEvent e)
+						{
+							for(int i = 0; i < fields.length; i++)
+							{
+								
+								if((JTextField) e.getSource() == fields[i])
+								{
+									if(fields[i].getText().equalsIgnoreCase(strings[i][0]) || fields[i].getText().equalsIgnoreCase(strings[i][1]))
+									{
+										boolean found = false;
+										
+										for(int ii = i; ii < fields.length; ii++)
+										{
+											
+											if(!found)
+											{
+												if(fields[ii].getText().equalsIgnoreCase(""))
+												{
+													fields[ii].requestFocusInWindow();
+													found = true;
+													
+												}
+											}
+											
+										}
+										if(!found)
+										{
+											for(int ii = 0; ii < i; ii++)
+											{
+												if(!found)
+												{
+													if(fields[ii].getText().equals(""))
+													{
+														
+														fields[ii].requestFocusInWindow();
+														found = true;
+														
+													}
+												}
+												
+											}
+											
+										}
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+				);
+			}
 			
 			answers1 = new JButton("Answers 1");
 			answers1.setBounds(500,600,110,50);
