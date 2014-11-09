@@ -108,6 +108,28 @@ public class Ch6Vocab extends JPanel {
 		
 	}
 	
+	private static boolean equalsMinusDash(String text, String ans)
+	{
+		
+		String s = "";
+		char[] ch = ans.toCharArray();
+		
+		for(char c : ch)
+		{
+			
+			if(c != '-')
+			{
+				
+				s += c;
+				
+			}
+			
+		}
+		
+		return s.equalsIgnoreCase(text);
+		
+	}
+	
 	private static JTextField makeWordField(String word)
 	{
 		
@@ -122,7 +144,7 @@ public class Ch6Vocab extends JPanel {
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					if(wordField.getText().equalsIgnoreCase(word))
+					if(wordField.getText().equalsIgnoreCase(word) || equalsMinusDash(wordField.getText(),word))
 					{
 						
 						wordField.setForeground(cc);
