@@ -219,7 +219,7 @@ public class Ch5Vocab extends JPanel {
 		}
 		
 		mainmenu = new JButton("Menu");
-		mainmenu.setBounds(750,640,100,50);
+		mainmenu.setBounds(750,600,100,50);
 		mainmenu.addActionListener(
 				
 			new ActionListener()
