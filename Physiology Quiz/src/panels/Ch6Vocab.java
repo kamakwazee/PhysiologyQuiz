@@ -72,7 +72,7 @@ public class Ch6Vocab extends JPanel {
 				else
 				{
 					
-					if(ch[i-1] != '-' && ch[i] != '-')
+					if(!((ch[i-1] == '-' && ch[i] == ' ') || (ch[i] == '-' && ch[i+1] == ' ')))
 					{
 						
 						def += ch[i];
@@ -103,6 +103,7 @@ public class Ch6Vocab extends JPanel {
 		defArea.setLineWrap(true);
 		defArea.setWrapStyleWord(true);
 		defArea.setBounds(200,200,500,100);
+		areaOnScreen = defArea;
 		
 		return defArea;
 		
@@ -130,6 +131,44 @@ public class Ch6Vocab extends JPanel {
 		
 	}
 	
+	private static boolean inWordsArray(int i)
+	{
+		
+		for(int ii = 0; ii < words.length; ii++)
+		{
+			
+			if(i == ii)
+			{
+				
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
+		
+	}
+	
+	private static boolean inDefinitionsArray(int i)
+	{
+		
+		for(int ii = 0; ii < definitions.length; ii++)
+		{
+			
+			if(i == ii)
+			{
+				
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
+		
+	}
+	
 	private static JTextField makeWordField(String word)
 	{
 		
@@ -137,6 +176,7 @@ public class Ch6Vocab extends JPanel {
 		wordField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		wordField.setBackground(Color.WHITE);
 		wordField.setBounds(200,300,300,25);
+		fieldOnScreen = wordField;
 		wordField.addActionListener(
 			new ActionListener()
 			{
@@ -144,21 +184,48 @@ public class Ch6Vocab extends JPanel {
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					if(wordField.getText().equalsIgnoreCase(word) || equalsMinusDash(wordField.getText(),word))
+					if(wordField.getForeground() == cc)
 					{
+						panel.remove(areaOnScreen);
+						panel.remove(fieldOnScreen);
+						fieldOnScreen.setForeground(Color.BLACK);
+						fieldOnScreen.setEditable(true);
+						fieldOnScreen.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+						fieldOnScreen.setText("");
 						
-						wordField.setForeground(cc);
-						wordField.setEditable(false);
-						wordField.setBorder(null);
-						next.setVisible(true);
+						Random r = new Random();
+						int i = -1;
+						do
+						{
+							i = r.nextInt(wordFields.length);
+						}while(i == lastIndex && inWordsArray(i) && inDefinitionsArray(i) && i != -1);
+						lastIndex = i;
+						panel.add(areaOnScreen = defAreas[i]);
+						panel.add(fieldOnScreen = wordFields[i]);
 						
+						panel.repaint();
+						panel.revalidate();
+						next.setVisible(false);
+						fieldOnScreen.requestFocusInWindow();
 					}
 					else
 					{
-						
-						wordField.setForeground(Color.RED);
-						
-						
+						if(wordField.getText().equalsIgnoreCase(word) || equalsMinusDash(wordField.getText(),word))
+						{
+							
+							wordField.setForeground(cc);
+							wordField.setEditable(false);
+							wordField.setBorder(null);
+							next.setVisible(true);
+							
+						}
+						else
+						{
+							
+							wordField.setForeground(Color.RED);
+							
+							
+						}
 					}
 					
 				}
@@ -264,7 +331,7 @@ public class Ch6Vocab extends JPanel {
 		do
 		{
 			i = r.nextInt(wordFields.length);
-		}while(i == lastIndex);
+		}while(i == lastIndex && inWordsArray(i) && inDefinitionsArray(i) && i != -1);
 		lastIndex = i;
 		add(areaOnScreen = defAreas[i]);
 		add(fieldOnScreen = wordFields[i]);
