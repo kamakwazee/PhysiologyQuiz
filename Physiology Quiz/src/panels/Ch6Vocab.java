@@ -223,6 +223,12 @@ public class Ch6Vocab extends JPanel {
 						{
 							
 							wordField.setForeground(Color.RED);
+							if(wordField.getText().equals(""))
+							{
+								
+								wordField.setText(word);
+								
+							}
 							
 							
 						}
@@ -243,6 +249,7 @@ public class Ch6Vocab extends JPanel {
 		try {
 			ArrayList<String> linesList = new ArrayList<String>();
 			Scanner scan = new Scanner(new File("resources" + File.separator + "Ch6Vocab.txt"));
+			
 			while(scan.hasNextLine())
 			{
 				
