@@ -1,4 +1,4 @@
-package panels;
+package vocab;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -10,15 +10,14 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import quiz.BonesMenu;
 import quiz.Quiz;
 
-public class Ch6VocabDefinitions extends JPanel {
+public class VocabDefinitions extends JPanel {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8955049281495221250L;
+	private static final long serialVersionUID = 6810208402151848208L;
 	private static JTextArea defs;
 	private static JScrollPane scroll;
 	private static JButton back;
@@ -39,7 +38,7 @@ public class Ch6VocabDefinitions extends JPanel {
 		
 	}
 	
-	public Ch6VocabDefinitions(Container pane, String[] words, String[] definitions)
+	public VocabDefinitions(JPanel vqp, Container pane, String[] words, String[] definitions)
 	{
 		
 		JPanel panel = this;
@@ -63,7 +62,7 @@ public class Ch6VocabDefinitions extends JPanel {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					Quiz.setPanel(panel, Ch6Vocab.panel);
+					Quiz.setPanel(panel, vqp);
 					
 				}
 				

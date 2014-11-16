@@ -1,9 +1,11 @@
-package panels;
+package vocab;
 
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -16,15 +18,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import quiz.BonesMenu;
 import quiz.Quiz;
 
-public class Ch6Vocab extends JPanel {
+public class VocabQuizDefinition extends JPanel {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -6162494636454122910L;
+	private static final long serialVersionUID = 42606383242485348L;
 	public static JPanel panel;
 	private static JTextArea[] defAreas;
 	private static String[] definitions;
@@ -32,7 +33,7 @@ public class Ch6Vocab extends JPanel {
 	private static String[] words;
 	private static Color DARKGREEN;
 	private static Color cc;
-	private static JButton next, menu, defs;
+	private static JButton next, menu, defs, dtw;
 	private static JTextField fieldOnScreen;
 	private static JTextArea areaOnScreen;
 	private static int lastIndex = -1;
@@ -93,41 +94,121 @@ public class Ch6Vocab extends JPanel {
 		
 	}
 	
-	private static JTextArea makeDefArea(String def)
+	private static String getTextWithoutEnter(String t)
 	{
 		
-		JTextArea defArea = new JTextArea(def);
-		defArea.setEditable(false);
-		defArea.setBorder(null);
-		defArea.setBackground(Color.WHITE);
-		defArea.setLineWrap(true);
-		defArea.setWrapStyleWord(true);
-		defArea.setBounds(200,200,500,100);
-		areaOnScreen = defArea;
-		
-		return defArea;
-		
-	}
-	
-	private static boolean equalsMinusDash(String text, String ans)
-	{
-		
+		char[] ch = t.toCharArray();
 		String s = "";
-		char[] ch = ans.toCharArray();
-		
 		for(char c : ch)
 		{
 			
-			if(c != '-')
-			{
-				
+			if(c != '\n')
 				s += c;
-				
-			}
 			
 		}
+		return s;
 		
-		return s.equalsIgnoreCase(text);
+	}
+	
+	private static JTextArea makeDefArea(String def)
+	{
+		
+		JTextArea defArea = new JTextArea();
+		defArea.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		defArea.setBackground(Color.WHITE);
+		defArea.setLineWrap(true);
+		defArea.setWrapStyleWord(true);
+		defArea.setBounds(200,250,500,100);
+		areaOnScreen = defArea;
+		defArea.addKeyListener(
+			new KeyListener()
+			{
+
+				@Override
+				public void keyTyped(KeyEvent e) {
+					
+					if(defArea.getForeground() == cc)
+					{
+						
+						panel.remove(areaOnScreen);
+						panel.remove(fieldOnScreen);
+						areaOnScreen.setForeground(Color.BLACK);
+						areaOnScreen.setEditable(true);
+						areaOnScreen.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+						areaOnScreen.setText("");
+						
+						Random r = new Random();
+						int i = -1;
+						do
+						{
+							i = r.nextInt(wordFields.length);
+						}while(i == lastIndex);
+						lastIndex = i;
+						panel.add(areaOnScreen = defAreas[i]);
+						panel.add(fieldOnScreen = wordFields[i]);
+						
+						panel.repaint();
+						panel.revalidate();
+						next.setVisible(false);
+						areaOnScreen.requestFocusInWindow();
+						
+					}
+					else
+					{
+					
+						if(e.getKeyChar() == '\n')
+						{
+							String t = getTextWithoutEnter(defArea.getText());
+							defArea.setText(t);
+							
+							if(t.equalsIgnoreCase(def))
+							{
+								
+								defArea.setEditable(false);
+								defArea.setForeground(cc);
+								defArea.setBorder(null);
+								next.setVisible(true);
+								
+							}
+							else if(t.equals(""))
+							{
+								
+								defArea.setText(def);
+								defArea.setForeground(Color.RED);
+								
+							}
+							
+						}
+						else
+						{
+							
+							defArea.setForeground(Color.RED);
+							defArea.setText(getTextWithoutEnter(defArea.getText()));
+							
+						}
+						
+					}
+					
+				}
+
+				@Override
+				public void keyPressed(KeyEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void keyReleased(KeyEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				
+				
+			}
+		);
+		
+		return defArea;
 		
 	}
 	
@@ -172,83 +253,23 @@ public class Ch6Vocab extends JPanel {
 	private static JTextField makeWordField(String word)
 	{
 		
-		JTextField wordField = new JTextField();
-		wordField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		JTextField wordField = new JTextField(word);
+		wordField.setBorder(null);
+		wordField.setEditable(false);
 		wordField.setBackground(Color.WHITE);
-		wordField.setBounds(200,300,300,25);
+		wordField.setBounds(200,200,300,25);
 		fieldOnScreen = wordField;
-		wordField.addActionListener(
-			new ActionListener()
-			{
-				
-				public void actionPerformed(ActionEvent e)
-				{
-					
-					if(wordField.getForeground() == cc)
-					{
-						panel.remove(areaOnScreen);
-						panel.remove(fieldOnScreen);
-						fieldOnScreen.setForeground(Color.BLACK);
-						fieldOnScreen.setEditable(true);
-						fieldOnScreen.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-						fieldOnScreen.setText("");
-						
-						Random r = new Random();
-						int i = -1;
-						do
-						{
-							i = r.nextInt(wordFields.length);
-						}while(i == lastIndex && inWordsArray(i) && inDefinitionsArray(i) && i != -1);
-						lastIndex = i;
-						panel.add(areaOnScreen = defAreas[i]);
-						panel.add(fieldOnScreen = wordFields[i]);
-						
-						panel.repaint();
-						panel.revalidate();
-						next.setVisible(false);
-						fieldOnScreen.requestFocusInWindow();
-					}
-					else
-					{
-						if(wordField.getText().equalsIgnoreCase(word) || equalsMinusDash(wordField.getText(),word))
-						{
-							
-							wordField.setForeground(cc);
-							wordField.setEditable(false);
-							wordField.setBorder(null);
-							next.setVisible(true);
-							
-						}
-						else
-						{
-							
-							wordField.setForeground(Color.RED);
-							if(wordField.getText().equals(""))
-							{
-								
-								wordField.setText(word);
-								
-							}
-							
-							
-						}
-					}
-					
-				}
-				
-			}
-		);
 		
 		return wordField;
 		
 	}
 	
-	private static void getWordsAndDefs()
+	private static void getWordsAndDefs(File vocabquiz)
 	{
 		
 		try {
 			ArrayList<String> linesList = new ArrayList<String>();
-			Scanner scan = new Scanner(new File("resources" + File.separator + "Ch6Vocab.txt"));
+			Scanner scan = new Scanner(vocabquiz);
 			
 			while(scan.hasNextLine())
 			{
@@ -266,7 +287,7 @@ public class Ch6Vocab extends JPanel {
 		
 	}
 	
-	public Ch6Vocab(Container pane, boolean colorblind)
+	public VocabQuizDefinition(Container pane, boolean colorblind, File vocabquiz)
 	{
 		panel = this;
 		setLayout(null);
@@ -278,7 +299,7 @@ public class Ch6Vocab extends JPanel {
 		else
 			cc = DARKGREEN;
 		
-		getWordsAndDefs();
+		getWordsAndDefs(vocabquiz);
 		defAreas = new JTextArea[definitions.length];
 		wordFields = new JTextField[words.length];
 		for(int i = 0; i < definitions.length; i++)
@@ -295,6 +316,23 @@ public class Ch6Vocab extends JPanel {
 			
 		}
 		
+		dtw = new JButton("Definition to Word");
+		dtw.addActionListener(
+			new ActionListener()
+			{
+				
+				public void actionPerformed(ActionEvent e)
+				{
+					
+					Quiz.setPanel(panel, new VocabQuizWord(pane, colorblind, vocabquiz));
+					
+				}
+				
+			}
+		);
+		dtw.setBounds(410,600,200,50);
+		add(dtw);
+		
 		next = new JButton("Next");
 		next.setBounds(200,330,100,25);
 		next.setVisible(false);
@@ -307,10 +345,10 @@ public class Ch6Vocab extends JPanel {
 					
 					panel.remove(areaOnScreen);
 					panel.remove(fieldOnScreen);
-					fieldOnScreen.setForeground(Color.BLACK);
-					fieldOnScreen.setEditable(true);
-					fieldOnScreen.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-					fieldOnScreen.setText("");
+					areaOnScreen.setForeground(Color.BLACK);
+					areaOnScreen.setEditable(true);
+					areaOnScreen.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+					areaOnScreen.setText("");
 					
 					Random r = new Random();
 					int i = -1;
@@ -325,7 +363,7 @@ public class Ch6Vocab extends JPanel {
 					panel.repaint();
 					panel.revalidate();
 					next.setVisible(false);
-					fieldOnScreen.requestFocusInWindow();
+					areaOnScreen.requestFocusInWindow();
 					
 				}
 				
@@ -351,7 +389,7 @@ public class Ch6Vocab extends JPanel {
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel, new Ch6VocabDefinitions(pane,words,definitions));
+					Quiz.setPanel(panel, new VocabDefinitions(panel,pane,words,definitions));
 					
 				}
 				

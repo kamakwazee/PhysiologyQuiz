@@ -4,13 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
-import panels.Ch5Vocab;
-import panels.Ch6Vocab;
+import vocab.VocabQuizButton;
 
 
 public class MainMenu extends JPanel
@@ -20,7 +20,8 @@ public class MainMenu extends JPanel
 	 * 
 	 */
 	private static final long serialVersionUID = -564092572158988199L;
-	private static JButton b, vq, vd, vq6;
+	private static JButton b;
+	private static VocabQuizButton vq5,vq6;
 	private static JCheckBox cb; //Color blind
 	private static boolean colorblind = false;
 	
@@ -71,59 +72,13 @@ public class MainMenu extends JPanel
 		b.setBounds(340,50,200,50);
 		add(b);
 		
-		vq = new JButton("Chapter 5 Vocab Quiz");
-		vq.addActionListener(
-			new ActionListener()
-			{
-				
-				public void actionPerformed(ActionEvent e)
-				{
-					
-					Quiz.setPanel(panel, new Ch5Vocab(pane,colorblind,false));
-					
-				}
-				
-			}
-		);
+		vq5 = new VocabQuizButton(pane,colorblind,"Chapter 5 Vocab Quiz",new File("resources" + File.separator + "Ch5Vocab.txt"));		
+		vq5.setBounds(340,110,200,50);
+		add((JButton)vq5);
 		
-		vq.setBounds(340,110,200,50);
-		add(vq);
-		
-		vd = new JButton("Chapter 5 Definitions");
-		vd.addActionListener(
-			new ActionListener()
-			{
-				
-				public void actionPerformed(ActionEvent e)
-				{
-					
-					Quiz.setPanel(panel, new Ch5Vocab(pane,colorblind,true));
-					
-				}
-				
-			}
-		);
-		
-		vd.setBounds(340,170,200,50);
-		add(vd);
-		
-		vq6 = new JButton("Chapter 6 Vocab Quiz");
-		vq6.addActionListener(
-			new ActionListener()
-			{
-				
-				public void actionPerformed(ActionEvent e)
-				{
-					
-					Quiz.setPanel(panel, new Ch6Vocab(pane,colorblind));
-					
-				}
-				
-			}
-		);
-		
-		vq6.setBounds(340,230,200,50);
-		add(vq6);
+		vq6 = new VocabQuizButton(pane, colorblind, "Chapter 6 Vocab Quiz", new File("resources" + File.separator + "Ch6Vocab.txt"));
+		vq6.setBounds(340,170,200,50);
+		add((JButton)vq6);
 		
 	}
 	

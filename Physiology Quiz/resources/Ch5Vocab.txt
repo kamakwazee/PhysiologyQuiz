@@ -1,0 +1,39 @@
+Wart - Mass produced by uncontrolled growth of epithelial skin cells
+Topical - medication applied to the skin
+Pruritus - Itching caused by skin disorders (infections), systemic disorders (cancer, kidney failure), psychogenic factors (emotional stress), or allergic reactions.
+Psoriasis - A common, chronic skin disorder in which keratinocytes divide and move more quickly than normal from the stratum basale to the stratum corneum
+Laceration - An irregular tear of the skin.
+Keratosis - Formation of a hardened growth of epidermal tissue
+Intradermal - Within the skin
+Impetigo - Superficial skin infection
+Hives - reddened elevated patches
+Hemangioma - Localized tumor of the skin and subcutaneous layer that results from an abnormal increase in blood vessels
+Corn - A painful thickening of the stratum corneum
+Contact dermatitis - Inflammation of the skin characterized by redness, itching, and swelling and caused by exposure of the skin to chemicals
+Cold Sore - A lesion, usually in the oral mucous membrane, caused by type 1 herpes simplex
+Athlete's foot - A superficial fungus infection of the skin
+Abrasion - A portion of the epidermis that has been scraped away
+Acne - An inflammation of sebaceous glands
+Pressure ulcers - shedding of epithelium caused by a constant deficiency of blood flow to tissues
+Burn - damage caused by excessive heat, electricity, radioactivity, or corrosive chemicals that denature the proteins in the skin cells.
+Photosensitivity - A heightened reaction of the skin after consumption of certain medications or contact with certain substances.
+Transdermal drug administration - Enables a drug contained within an adhesive skin patch to pass across the epidermis and into the blood vessels of the dermis
+Chemotherapy - The treatment of disease, usually cancer, by means of chemical substances or drugs.
+Pallor - Paleness of the skin that may occur in conditions such as shock and anemia.
+Erythema - Redness of the skin caused by engorgement
+Jaundice - Due to the buildup of the yellow pigment bilirubin in the skin
+Skin graft - transfer of a patch of healthy skin taken from a donor site to cover a wound.
+Dermatology - The branch of medicine that specializes in diagnosing and treating skin disorders.
+Cyanotic - mucous membranes, nail beds, and skin appear bluish when blood is not picking up an adequate amount of oxygen in the lungs
+Albin - white
+Basale - base
+Corneum - horny
+Cut- - skin
+Derm- - skin
+Epi- - over
+Fer- - carry
+Lucidus - clear
+Melan- - black
+Seb- - fat
+Sub- - under
+Sudor- - sweat
