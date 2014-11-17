@@ -411,16 +411,10 @@ public class Vertebra extends JPanel {
 					}
 
 					@Override
-					public void keyPressed(KeyEvent e) {
-						// TODO Auto-generated method stub
-						
-					}
+					public void keyPressed(KeyEvent e) {}
 
 					@Override
-					public void keyReleased(KeyEvent e) {
-						// TODO Auto-generated method stub
-						
-					}
+					public void keyReleased(KeyEvent e) {}
 					
 					
 					

@@ -23,7 +23,7 @@ public class MainMenu extends JPanel
 	private static JButton b;
 	private static VocabQuizButton vq5,vq6;
 	private static JCheckBox cb; //Color blind
-	private static boolean colorblind = false;
+	public static boolean colorblind = false;
 	
 	public MainMenu(Container pane)
 	{

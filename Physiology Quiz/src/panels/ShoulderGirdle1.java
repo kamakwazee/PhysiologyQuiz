@@ -451,7 +451,6 @@ public class ShoulderGirdle1 extends JPanel {
 			add(reset);
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -32,7 +32,6 @@ public class LateralSkull extends JPanel{
 	private static Color cc; //Correct color
 	private static Color DARKGREEN;
 	private static JButton back, answers, reset;
-	private static int fi;
 	
 	public LateralSkull(Container pane, boolean colorblind)
 	{
@@ -978,7 +977,6 @@ public class LateralSkull extends JPanel{
 			add(reset);
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

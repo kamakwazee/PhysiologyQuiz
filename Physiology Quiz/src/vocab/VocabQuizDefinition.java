@@ -177,13 +177,12 @@ public class VocabQuizDefinition extends JPanel {
 								defArea.setForeground(Color.RED);
 								
 							}
-							
-						}
-						else
-						{
-							
-							defArea.setForeground(Color.RED);
-							defArea.setText(getTextWithoutEnter(defArea.getText()));
+							else
+							{
+								
+								defArea.setForeground(cc);
+								
+							}
 							
 						}
 						
@@ -192,16 +191,10 @@ public class VocabQuizDefinition extends JPanel {
 				}
 
 				@Override
-				public void keyPressed(KeyEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
+				public void keyPressed(KeyEvent e) {}
 
 				@Override
-				public void keyReleased(KeyEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
+				public void keyReleased(KeyEvent e) {}
 				
 				
 				
@@ -281,7 +274,6 @@ public class VocabQuizDefinition extends JPanel {
 			
 			splitWordsAndDefs(linesList.toArray(new String[linesList.size()]));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

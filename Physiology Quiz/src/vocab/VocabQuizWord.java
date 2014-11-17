@@ -259,7 +259,6 @@ public class VocabQuizWord extends JPanel {
 			
 			splitWordsAndDefs(linesList.toArray(new String[linesList.size()]));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

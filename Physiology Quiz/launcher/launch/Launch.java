@@ -22,7 +22,6 @@ public class Launch {
 			downloadVersion.setVisible(true);
 			downloadVersion.Download(new URL("http://kamakwazee.net/physiologyquiz/version.txt"), new File("update.txt"), "Checking for Updates");
 		}catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -40,7 +39,6 @@ public class Launch {
 				removeFiles();
 				runProgram();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -58,7 +56,6 @@ public class Launch {
 				removeFiles();
 				runProgram();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -76,7 +73,6 @@ public class Launch {
 				removeFiles();
 				runProgram();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			

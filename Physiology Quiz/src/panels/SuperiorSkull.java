@@ -617,7 +617,6 @@ public class SuperiorSkull extends JPanel{
 			add(reset);
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
