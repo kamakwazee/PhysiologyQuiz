@@ -180,7 +180,8 @@ public class VocabQuizDefinition extends JPanel {
 							else
 							{
 								
-								defArea.setForeground(cc);
+								defArea.setForeground(Color.RED);
+								defArea.setText(t);
 								
 							}
 							
