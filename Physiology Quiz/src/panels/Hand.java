@@ -29,21 +29,17 @@ public class Hand extends JPanel {
 	private static BufferedImage bi;
 	private static JTextField ph,d,m,p,mc,c,h,pf,tt,l,u,r,tm,td,s,ct;
 	private static String phs,ds,ms,ps,mcs,cs,hs,pfs,tts,ls,us,rs,tms,tds,ss,cts;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers, reset;
 	
-	public Hand(Container pane, boolean colorblind)
+	public Hand(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try
 		{
@@ -86,7 +82,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							ph.setForeground(Color.RED);
+							ph.setForeground(wc);
 							
 						}
 						
@@ -118,7 +114,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							d.setForeground(Color.RED);
+							d.setForeground(wc);
 							
 						}
 						
@@ -150,7 +146,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							m.setForeground(Color.RED);
+							m.setForeground(wc);
 							
 						}
 						
@@ -182,7 +178,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							p.setForeground(Color.RED);
+							p.setForeground(wc);
 							
 						}
 						
@@ -214,7 +210,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							mc.setForeground(Color.RED);
+							mc.setForeground(wc);
 							
 						}
 						
@@ -246,7 +242,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							c.setForeground(Color.RED);
+							c.setForeground(wc);
 							
 						}
 						
@@ -278,7 +274,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							h.setForeground(Color.RED);
+							h.setForeground(wc);
 							
 						}
 						
@@ -310,7 +306,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							pf.setForeground(Color.RED);
+							pf.setForeground(wc);
 							
 						}
 						
@@ -342,7 +338,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							tt.setForeground(Color.RED);
+							tt.setForeground(wc);
 							
 						}
 						
@@ -374,7 +370,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							l.setForeground(Color.RED);
+							l.setForeground(wc);
 							
 						}
 						
@@ -406,7 +402,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							u.setForeground(Color.RED);
+							u.setForeground(wc);
 							
 						}
 						
@@ -438,7 +434,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							r.setForeground(Color.RED);
+							r.setForeground(wc);
 							
 						}
 						
@@ -470,7 +466,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							tm.setForeground(Color.RED);
+							tm.setForeground(wc);
 							
 						}
 						
@@ -502,7 +498,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							td.setForeground(Color.RED);
+							td.setForeground(wc);
 							
 						}
 						
@@ -534,7 +530,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							s.setForeground(Color.RED);
+							s.setForeground(wc);
 							
 						}
 						
@@ -566,7 +562,7 @@ public class Hand extends JPanel {
 						else
 						{
 							
-							ct.setForeground(Color.RED);
+							ct.setForeground(wc);
 							
 						}
 						

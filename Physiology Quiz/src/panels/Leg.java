@@ -29,21 +29,17 @@ public class Leg extends JPanel {
 	private static BufferedImage bi;
 	private static JTextField n,lc,ps,h,lt,il,gt,inf,mc,gtr,ic,lc2;
 	private static String ns,lcs,pss,hs,lts,ils,gts,infs,mcs,gtrs,ics,lc2s;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers, reset;
 	
-	public Leg(Container pane, boolean colorblind)
+	public Leg(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try
 		{
@@ -81,7 +77,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							n.setForeground(Color.RED);
+							n.setForeground(wc);
 							
 						}
 						
@@ -113,7 +109,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							lc.setForeground(Color.RED);
+							lc.setForeground(wc);
 							
 						}
 						
@@ -145,7 +141,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							ps.setForeground(Color.RED);
+							ps.setForeground(wc);
 							
 						}
 						
@@ -177,7 +173,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							h.setForeground(Color.RED);
+							h.setForeground(wc);
 							
 						}
 						
@@ -209,7 +205,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							lt.setForeground(Color.RED);
+							lt.setForeground(wc);
 							
 						}
 						
@@ -241,7 +237,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							il.setForeground(Color.RED);
+							il.setForeground(wc);
 							
 						}
 						
@@ -273,7 +269,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							gt.setForeground(Color.RED);
+							gt.setForeground(wc);
 							
 						}
 						
@@ -305,7 +301,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							inf.setForeground(Color.RED);
+							inf.setForeground(wc);
 							
 						}
 						
@@ -337,7 +333,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							mc.setForeground(Color.RED);
+							mc.setForeground(wc);
 							
 						}
 						
@@ -369,7 +365,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							gtr.setForeground(Color.RED);
+							gtr.setForeground(wc);
 							
 						}
 						
@@ -401,7 +397,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							ic.setForeground(Color.RED);
+							ic.setForeground(wc);
 							
 						}
 						
@@ -433,7 +429,7 @@ public class Leg extends JPanel {
 						else
 						{
 							
-							lc2.setForeground(Color.RED);
+							lc2.setForeground(wc);
 							
 						}
 						

@@ -29,21 +29,17 @@ public class Foot extends JPanel {
 	private static BufferedImage bi;
 	private static JTextField mc,ic,n,t,ph,mt,ta,d,m,p,lc,cb,cn;
 	private static String mcs,ics,ns,ts,phs,mts,tas,ds,ms,ps,lcs,cbs,cns;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers, reset;
 	
-	public Foot(Container pane, boolean colorblind)
+	public Foot(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try
 		{
@@ -83,7 +79,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							mc.setForeground(Color.RED);
+							mc.setForeground(wc);
 							
 						}
 						
@@ -115,7 +111,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							ic.setForeground(Color.RED);
+							ic.setForeground(wc);
 							
 						}
 						
@@ -147,7 +143,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							n.setForeground(Color.RED);
+							n.setForeground(wc);
 							
 						}
 						
@@ -179,7 +175,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							t.setForeground(Color.RED);
+							t.setForeground(wc);
 							
 						}
 						
@@ -211,7 +207,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							ph.setForeground(Color.RED);
+							ph.setForeground(wc);
 							
 						}
 						
@@ -243,7 +239,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							mt.setForeground(Color.RED);
+							mt.setForeground(wc);
 							
 						}
 						
@@ -275,7 +271,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							ta.setForeground(Color.RED);
+							ta.setForeground(wc);
 							
 						}
 						
@@ -307,7 +303,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							d.setForeground(Color.RED);
+							d.setForeground(wc);
 							
 						}
 						
@@ -339,7 +335,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							m.setForeground(Color.RED);
+							m.setForeground(wc);
 							
 						}
 						
@@ -371,7 +367,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							p.setForeground(Color.RED);
+							p.setForeground(wc);
 							
 						}
 						
@@ -403,7 +399,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							lc.setForeground(Color.RED);
+							lc.setForeground(wc);
 							
 						}
 						
@@ -435,7 +431,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							cb.setForeground(Color.RED);
+							cb.setForeground(wc);
 							
 						}
 						
@@ -467,7 +463,7 @@ public class Foot extends JPanel {
 						else
 						{
 							
-							cn.setForeground(Color.RED);
+							cn.setForeground(wc);
 							
 						}
 						

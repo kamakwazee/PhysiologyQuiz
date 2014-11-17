@@ -27,18 +27,19 @@ public class InferiorSkull extends JPanel {
 	 */
 	private static final long serialVersionUID = 3595634700783152258L;
 	static JTextField pb, zb, tb, v, mf, sp, mp, tb2, pab, m, sb, fo, cac, jf, oc, fm;
-	static Color DARKGREEN, cc;
+	static Color cc, wc;
 	private static BufferedImage bi;
 	private static String pbs, zbs, tbs, vs, mfs, sps, mps, pabs, ms, sbs, fos, cacs, jfs, ocs, fms, tb2s;
 	private static JButton back, answers, reset;
 	
-	public InferiorSkull(Container pane, boolean colorblind)
+	public InferiorSkull(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		pbs = "Palatine bone";
 		zbs = "Zygomatic bone";
@@ -56,11 +57,6 @@ public class InferiorSkull extends JPanel {
 		jfs = "Jugular foramen";
 		ocs = "Occipital condyle";
 		fms = "Foramen magnum";
-		
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
 		
 		try{
 			File f = new File("resources" + File.separator + "InferiorSkull.jpg");
@@ -85,7 +81,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							pb.setForeground(Color.RED);
+							pb.setForeground(wc);
 							
 						}
 						
@@ -117,7 +113,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							zb.setForeground(Color.RED);
+							zb.setForeground(wc);
 							
 						}
 						
@@ -149,7 +145,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							tb.setForeground(Color.RED);
+							tb.setForeground(wc);
 							
 						}
 						
@@ -181,7 +177,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							v.setForeground(Color.RED);
+							v.setForeground(wc);
 							
 						}
 						
@@ -213,7 +209,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							mf.setForeground(Color.RED);
+							mf.setForeground(wc);
 							
 						}
 						
@@ -245,7 +241,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							sp.setForeground(Color.RED);
+							sp.setForeground(wc);
 							
 						}
 						
@@ -277,7 +273,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							mp.setForeground(Color.RED);
+							mp.setForeground(wc);
 							
 						}
 						
@@ -309,7 +305,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							tb2.setForeground(Color.RED);
+							tb2.setForeground(wc);
 							
 						}
 						
@@ -341,7 +337,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							pab.setForeground(Color.RED);
+							pab.setForeground(wc);
 							
 						}
 						
@@ -373,7 +369,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							m.setForeground(Color.RED);
+							m.setForeground(wc);
 							
 						}
 						
@@ -405,7 +401,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							sb.setForeground(Color.RED);
+							sb.setForeground(wc);
 							
 						}
 						
@@ -437,7 +433,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							fo.setForeground(Color.RED);
+							fo.setForeground(wc);
 							
 						}
 						
@@ -469,7 +465,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							cac.setForeground(Color.RED);
+							cac.setForeground(wc);
 							
 						}
 						
@@ -501,7 +497,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							jf.setForeground(Color.RED);
+							jf.setForeground(wc);
 							
 						}
 						
@@ -533,7 +529,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							oc.setForeground(Color.RED);
+							oc.setForeground(wc);
 							
 						}
 						
@@ -565,7 +561,7 @@ public class InferiorSkull extends JPanel {
 						else
 						{
 							
-							fm.setForeground(Color.RED);
+							fm.setForeground(wc);
 							
 						}
 						

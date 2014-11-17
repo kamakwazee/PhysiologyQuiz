@@ -29,21 +29,17 @@ public class LateralFetalSkull extends JPanel {
 	private static BufferedImage bi;
 	private static JTextField pb,pf,ob,mf,tb,af,sf,fb;
 	private static String[] pbs,pfs,obs,mfs,tbs,afs,sfs,fbs;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers1, answers2, reset;
 	
-	public LateralFetalSkull(Container pane, boolean colorblind)
+	public LateralFetalSkull(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try {
 			File f = new File("resources" + File.separator + "LateralFetalSkull.jpg");
@@ -79,7 +75,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							pb.setForeground(Color.RED);
+							pb.setForeground(wc);
 							
 						}
 						
@@ -114,7 +110,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							pf.setForeground(Color.RED);
+							pf.setForeground(wc);
 							
 						}
 						
@@ -149,7 +145,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							ob.setForeground(Color.RED);
+							ob.setForeground(wc);
 							
 						}
 						
@@ -184,7 +180,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							mf.setForeground(Color.RED);
+							mf.setForeground(wc);
 							
 						}
 						
@@ -219,7 +215,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							tb.setForeground(Color.RED);
+							tb.setForeground(wc);
 							
 						}
 						
@@ -254,7 +250,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							af.setForeground(Color.RED);
+							af.setForeground(wc);
 							
 						}
 						
@@ -289,7 +285,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							sf.setForeground(Color.RED);
+							sf.setForeground(wc);
 							
 						}
 						
@@ -324,7 +320,7 @@ public class LateralFetalSkull extends JPanel {
 						else
 						{
 							
-							fb.setForeground(Color.RED);
+							fb.setForeground(wc);
 							
 						}
 						

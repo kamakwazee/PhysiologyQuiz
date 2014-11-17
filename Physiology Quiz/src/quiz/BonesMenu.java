@@ -32,14 +32,17 @@ public class BonesMenu extends JPanel{
 	private static final long serialVersionUID = 5986396967330163229L;
 	static JButton sg1,sg2,arm,hand,p1,p2,ls,lf,ss,sf,is,as,v,leg,foot,back;
 	public static JPanel panel;
+	private static Color cc, wc;
 	
 	
-	public BonesMenu(Container pane, boolean colorblind)
+	public BonesMenu(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		sg1 = new JButton("Shoulder Girdle 1");
 		sg1.addActionListener(
@@ -49,7 +52,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new ShoulderGirdle1(pane,colorblind));
+					Quiz.setPanel(panel,new ShoulderGirdle1(pane,cc,wc));
 					
 				}
 				
@@ -68,7 +71,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new ShoulderGirdle2(pane,colorblind));
+					Quiz.setPanel(panel,new ShoulderGirdle2(pane,cc,wc));
 					
 				}
 				
@@ -87,7 +90,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new Arm(pane,colorblind));
+					Quiz.setPanel(panel,new Arm(pane,cc,wc));
 					
 				}
 				
@@ -106,7 +109,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new Hand(pane,colorblind));
+					Quiz.setPanel(panel,new Hand(pane,cc,wc));
 					
 				}
 				
@@ -125,7 +128,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new Pelvis1(pane,colorblind));
+					Quiz.setPanel(panel,new Pelvis1(pane,cc,wc));
 					
 				}
 				
@@ -144,7 +147,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new Pelvis2(pane,colorblind));
+					Quiz.setPanel(panel,new Pelvis2(pane,cc,wc));
 					
 				}
 				
@@ -163,7 +166,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new LateralSkull(pane,colorblind));
+					Quiz.setPanel(panel,new LateralSkull(pane,cc,wc));
 					
 				}
 				
@@ -182,7 +185,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new SuperiorSkull(pane,colorblind));
+					Quiz.setPanel(panel,new SuperiorSkull(pane,cc,wc));
 					
 				}
 				
@@ -201,7 +204,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new InferiorSkull(pane,colorblind));
+					Quiz.setPanel(panel,new InferiorSkull(pane,cc,wc));
 					
 				}
 				
@@ -220,7 +223,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new AnteriorSkull(pane,colorblind));
+					Quiz.setPanel(panel,new AnteriorSkull(pane,cc,wc));
 					
 				}
 				
@@ -239,7 +242,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new Vertebra(pane,colorblind));
+					Quiz.setPanel(panel,new Vertebra(pane,cc,wc));
 					
 				}
 				
@@ -258,7 +261,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new LateralFetalSkull(pane,colorblind));
+					Quiz.setPanel(panel,new LateralFetalSkull(pane,cc,wc));
 					
 				}
 				
@@ -277,7 +280,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new SuperiorFetalSkull(pane,colorblind));
+					Quiz.setPanel(panel,new SuperiorFetalSkull(pane,cc,wc));
 					
 				}
 				
@@ -296,7 +299,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new Leg(pane,colorblind));
+					Quiz.setPanel(panel,new Leg(pane,cc,wc));
 					
 				}
 				
@@ -315,7 +318,7 @@ public class BonesMenu extends JPanel{
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel,new Foot(pane,colorblind));
+					Quiz.setPanel(panel,new Foot(pane,cc,wc));
 					
 				}
 				

@@ -29,21 +29,17 @@ public class Arm extends JPanel {
 	private static BufferedImage bi;
 	private static JTextField gt,lt,is,dt,rf,c,hh,an,rg,cf,of,me,t,sn,dt2,le;
 	private static String gts,lts,iss,dts,rfs,cs,hhs,ans,rgs,cfs,ofs,mes,ts,sns,dt2s,les;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers, reset;
 	
-	public Arm(Container pane, boolean colorblind)
+	public Arm(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try
 		{
@@ -85,7 +81,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							gt.setForeground(Color.RED);
+							gt.setForeground(wc);
 							
 						}
 						
@@ -117,7 +113,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							lt.setForeground(Color.RED);
+							lt.setForeground(wc);
 							
 						}
 						
@@ -149,7 +145,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							is.setForeground(Color.RED);
+							is.setForeground(wc);
 							
 						}
 						
@@ -181,7 +177,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							dt.setForeground(Color.RED);
+							dt.setForeground(wc);
 							
 						}
 						
@@ -213,7 +209,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							rf.setForeground(Color.RED);
+							rf.setForeground(wc);
 							
 						}
 						
@@ -245,7 +241,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							c.setForeground(Color.RED);
+							c.setForeground(wc);
 							
 						}
 						
@@ -277,7 +273,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							hh.setForeground(Color.RED);
+							hh.setForeground(wc);
 							
 						}
 						
@@ -309,7 +305,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							an.setForeground(Color.RED);
+							an.setForeground(wc);
 							
 						}
 						
@@ -341,7 +337,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							rg.setForeground(Color.RED);
+							rg.setForeground(wc);
 							
 						}
 						
@@ -373,7 +369,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							cf.setForeground(Color.RED);
+							cf.setForeground(wc);
 							
 						}
 						
@@ -405,7 +401,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							of.setForeground(Color.RED);
+							of.setForeground(wc);
 							
 						}
 						
@@ -437,7 +433,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							me.setForeground(Color.RED);
+							me.setForeground(wc);
 							
 						}
 						
@@ -469,7 +465,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							t.setForeground(Color.RED);
+							t.setForeground(wc);
 							
 						}
 						
@@ -501,7 +497,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							sn.setForeground(Color.RED);
+							sn.setForeground(wc);
 							
 						}
 						
@@ -533,7 +529,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							dt2.setForeground(Color.RED);
+							dt2.setForeground(wc);
 							
 						}
 						
@@ -565,7 +561,7 @@ public class Arm extends JPanel {
 						else
 						{
 							
-							le.setForeground(Color.RED);
+							le.setForeground(wc);
 							
 						}
 						

@@ -33,21 +33,17 @@ public class Vertebra extends JPanel {
 	private static JTextField tp, l, sp, va, vf, b, p;
 	private static JTextArea sapf;
 	private static String tps, ls, sps, vas, vfs, bs, ps, sapfs;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers, reset;
 	
-	public Vertebra(Container pane, boolean colorblind)
+	public Vertebra(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try
 		{
@@ -82,7 +78,7 @@ public class Vertebra extends JPanel {
 						else
 						{
 							
-							tp.setForeground(Color.RED);
+							tp.setForeground(wc);
 							
 						}
 						
@@ -114,7 +110,7 @@ public class Vertebra extends JPanel {
 						else
 						{
 							
-							l.setForeground(Color.RED);
+							l.setForeground(wc);
 							
 						}
 						
@@ -146,7 +142,7 @@ public class Vertebra extends JPanel {
 						else
 						{
 							
-							sp.setForeground(Color.RED);
+							sp.setForeground(wc);
 							
 						}
 						
@@ -178,7 +174,7 @@ public class Vertebra extends JPanel {
 						else
 						{
 							
-							va.setForeground(Color.RED);
+							va.setForeground(wc);
 							
 						}
 						
@@ -210,7 +206,7 @@ public class Vertebra extends JPanel {
 						else
 						{
 							
-							vf.setForeground(Color.RED);
+							vf.setForeground(wc);
 							
 						}
 						
@@ -242,7 +238,7 @@ public class Vertebra extends JPanel {
 						else
 						{
 							
-							b.setForeground(Color.RED);
+							b.setForeground(wc);
 							
 						}
 						
@@ -274,7 +270,7 @@ public class Vertebra extends JPanel {
 						else
 						{
 							
-							p.setForeground(Color.RED);
+							p.setForeground(wc);
 							
 						}
 						
@@ -404,7 +400,7 @@ public class Vertebra extends JPanel {
 							}
 							else
 							{
-								sapf.setForeground(Color.RED);
+								sapf.setForeground(wc);
 							}
 						}
 						

@@ -31,8 +31,7 @@ public class VocabQuizDefinition extends JPanel {
 	private static String[] definitions;
 	private static JTextField[]  wordFields;
 	private static String[] words;
-	private static Color DARKGREEN;
-	private static Color cc;
+	private static Color cc, wc;
 	private static JButton next, menu, defs, dtw;
 	private static JTextField fieldOnScreen;
 	private static JTextArea areaOnScreen;
@@ -174,13 +173,13 @@ public class VocabQuizDefinition extends JPanel {
 							{
 								
 								defArea.setText(def);
-								defArea.setForeground(Color.RED);
+								defArea.setForeground(wc);
 								
 							}
 							else
 							{
 								
-								defArea.setForeground(Color.RED);
+								defArea.setForeground(wc);
 								defArea.setText(t);
 								
 							}
@@ -280,17 +279,14 @@ public class VocabQuizDefinition extends JPanel {
 		
 	}
 	
-	public VocabQuizDefinition(Container pane, boolean colorblind, File vocabquiz)
+	public VocabQuizDefinition(Container pane, Color correctcolor, Color wrongcolor, File vocabquiz)
 	{
 		panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		getWordsAndDefs(vocabquiz);
 		defAreas = new JTextArea[definitions.length];
@@ -317,7 +313,7 @@ public class VocabQuizDefinition extends JPanel {
 				public void actionPerformed(ActionEvent e)
 				{
 					
-					Quiz.setPanel(panel, new VocabQuizWord(pane, colorblind, vocabquiz));
+					Quiz.setPanel(panel, new VocabQuizWord(pane, cc, wc, vocabquiz));
 					
 				}
 				

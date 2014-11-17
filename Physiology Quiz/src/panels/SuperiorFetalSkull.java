@@ -28,30 +28,26 @@ public class SuperiorFetalSkull extends JPanel{
 	 */
 	private static final long serialVersionUID = 2485035365327738440L;
 	static JTextField fb,pb,pf,af,ob;
-	static Color DARKGREEN, cc;
+	static Color cc, wc;
 	private static BufferedImage bi;
 	private static String[] fbs,pbs,pfs,afs,obs;
 	private static JButton back, answers1, answers2, reset;
 	
-	public SuperiorFetalSkull(Container pane, boolean colorblind)
+	public SuperiorFetalSkull(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		fbs = new String[]{"Frontal bone"};
 		pbs = new String[]{"Parietal bone"};
 		pfs = new String[]{"Posterior fontanel", "Occipital fontanel"};
 		afs = new String[]{"Anterior fontanel", "Frontal fontanel"};
 		obs = new String[]{"Occipital bone"};
-		
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
 		
 		try {
 			File f = new File("resources" + File.separator + "SuperiorFetalSkull.jpg");
@@ -76,7 +72,7 @@ public class SuperiorFetalSkull extends JPanel{
 						else
 						{
 							
-							fb.setForeground(Color.RED);
+							fb.setForeground(wc);
 							
 						}
 						
@@ -108,7 +104,7 @@ public class SuperiorFetalSkull extends JPanel{
 						else
 						{
 							
-							pb.setForeground(Color.RED);
+							pb.setForeground(wc);
 							
 						}
 						
@@ -140,7 +136,7 @@ public class SuperiorFetalSkull extends JPanel{
 						else
 						{
 							
-							pf.setForeground(Color.RED);
+							pf.setForeground(wc);
 							
 						}
 						
@@ -172,7 +168,7 @@ public class SuperiorFetalSkull extends JPanel{
 						else
 						{
 							
-							af.setForeground(Color.RED);
+							af.setForeground(wc);
 							
 						}
 						
@@ -204,7 +200,7 @@ public class SuperiorFetalSkull extends JPanel{
 						else
 						{
 							
-							ob.setForeground(Color.RED);
+							ob.setForeground(wc);
 							
 						}
 						

@@ -27,18 +27,19 @@ public class AnteriorSkull extends JPanel {
 	 */
 	private static final long serialVersionUID = 3492728240060628412L;
 	static JTextField pb, nb, sb, tb, eb, lb, zb, mx, ma, fb, sof, oc, mnc, inc, v;
-	static Color DARKGREEN, cc;
+	static Color cc, wc;
 	private static BufferedImage bi;
 	private static String pbs, nbs, sbs, tbs, ebs, lbs, zbs, mxs, mas, fbs, sofs, ocs, mncs, incs, vs;
 	private static JButton back, answers, reset;
 	
-	public AnteriorSkull(Container pane, boolean colorblind)
+	public AnteriorSkull(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		pbs = "Parietal bone";
 		nbs = "Nasal bone";
@@ -55,11 +56,6 @@ public class AnteriorSkull extends JPanel {
 		mncs = "Middle nasal concha";
 		incs = "Inferior nasal concha";
 		vs = "Vomer";
-		
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
 		
 		try{
 			File f = new File("resources" + File.separator + "AnteriorSkull.jpg");
@@ -84,7 +80,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							pb.setForeground(Color.RED);
+							pb.setForeground(wc);
 							
 						}
 						
@@ -116,7 +112,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							nb.setForeground(Color.RED);
+							nb.setForeground(wc);
 							
 						}
 						
@@ -148,7 +144,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							sb.setForeground(Color.RED);
+							sb.setForeground(wc);
 							
 						}
 						
@@ -180,7 +176,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							tb.setForeground(Color.RED);
+							tb.setForeground(wc);
 							
 						}
 						
@@ -212,7 +208,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							eb.setForeground(Color.RED);
+							eb.setForeground(wc);
 							
 						}
 						
@@ -244,7 +240,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							lb.setForeground(Color.RED);
+							lb.setForeground(wc);
 							
 						}
 						
@@ -276,7 +272,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							zb.setForeground(Color.RED);
+							zb.setForeground(wc);
 							
 						}
 						
@@ -308,7 +304,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							mx.setForeground(Color.RED);
+							mx.setForeground(wc);
 							
 						}
 						
@@ -340,7 +336,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							ma.setForeground(Color.RED);
+							ma.setForeground(wc);
 							
 						}
 						
@@ -372,7 +368,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							fb.setForeground(Color.RED);
+							fb.setForeground(wc);
 							
 						}
 						
@@ -404,7 +400,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							sof.setForeground(Color.RED);
+							sof.setForeground(wc);
 							
 						}
 						
@@ -436,7 +432,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							oc.setForeground(Color.RED);
+							oc.setForeground(wc);
 							
 						}
 						
@@ -468,7 +464,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							mnc.setForeground(Color.RED);
+							mnc.setForeground(wc);
 							
 						}
 						
@@ -500,7 +496,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							inc.setForeground(Color.RED);
+							inc.setForeground(wc);
 							
 						}
 						
@@ -532,7 +528,7 @@ public class AnteriorSkull extends JPanel {
 						else
 						{
 							
-							v.setForeground(Color.RED);
+							v.setForeground(wc);
 							
 						}
 						

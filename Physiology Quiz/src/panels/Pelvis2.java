@@ -29,21 +29,17 @@ public class Pelvis2 extends JPanel {
 	private static BufferedImage bi;
 	private static JTextField psis,piis,gsn,ib,is,ih,it,ir,of,ipr,p,bp,at,aiis,asis,ic,il;
 	private static String psiss,piiss,gsns,ibs,iss,ihs,its,irs,ofs,iprs,ps,bps,ats,aiiss,asiss,ics,ils;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers, reset;
 	
-	public Pelvis2(Container pane, boolean colorblind)
+	public Pelvis2(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try
 		{
@@ -87,7 +83,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							psis.setForeground(Color.RED);
+							psis.setForeground(wc);
 							
 						}
 						
@@ -119,7 +115,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							piis.setForeground(Color.RED);
+							piis.setForeground(wc);
 							
 						}
 						
@@ -151,7 +147,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							gsn.setForeground(Color.RED);
+							gsn.setForeground(wc);
 							
 						}
 						
@@ -183,7 +179,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							ib.setForeground(Color.RED);
+							ib.setForeground(wc);
 							
 						}
 						
@@ -215,7 +211,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							is.setForeground(Color.RED);
+							is.setForeground(wc);
 							
 						}
 						
@@ -247,7 +243,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							ih.setForeground(Color.RED);
+							ih.setForeground(wc);
 							
 						}
 						
@@ -279,7 +275,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							it.setForeground(Color.RED);
+							it.setForeground(wc);
 							
 						}
 						
@@ -311,7 +307,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							ir.setForeground(Color.RED);
+							ir.setForeground(wc);
 							
 						}
 						
@@ -343,7 +339,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							of.setForeground(Color.RED);
+							of.setForeground(wc);
 							
 						}
 						
@@ -375,7 +371,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							ipr.setForeground(Color.RED);
+							ipr.setForeground(wc);
 							
 						}
 						
@@ -407,7 +403,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							p.setForeground(Color.RED);
+							p.setForeground(wc);
 							
 						}
 						
@@ -439,7 +435,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							bp.setForeground(Color.RED);
+							bp.setForeground(wc);
 							
 						}
 						
@@ -471,7 +467,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							at.setForeground(Color.RED);
+							at.setForeground(wc);
 							
 						}
 						
@@ -503,7 +499,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							aiis.setForeground(Color.RED);
+							aiis.setForeground(wc);
 							
 						}
 						
@@ -535,7 +531,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							asis.setForeground(Color.RED);
+							asis.setForeground(wc);
 							
 						}
 						
@@ -567,7 +563,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							ic.setForeground(Color.RED);
+							ic.setForeground(wc);
 							
 						}
 						
@@ -599,7 +595,7 @@ public class Pelvis2 extends JPanel {
 						else
 						{
 							
-							il.setForeground(Color.RED);
+							il.setForeground(wc);
 							
 						}
 						

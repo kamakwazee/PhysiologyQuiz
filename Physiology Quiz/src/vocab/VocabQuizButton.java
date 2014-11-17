@@ -19,7 +19,7 @@ public class VocabQuizButton extends JButton {
 	private File vbq;
 	private Container p;
 
-	public VocabQuizButton(Container pane, boolean colorblind, String name, File vocabquiz)
+	public VocabQuizButton(Container pane, String name, File vocabquiz)
 	{
 		
 		super(name);
@@ -36,7 +36,7 @@ public class VocabQuizButton extends JButton {
 		public void actionPerformed(ActionEvent e)
 		{
 			
-			Quiz.setPanel(Quiz.mm, new VocabQuizWord(p, MainMenu.colorblind, vbq));
+			Quiz.setPanel(Quiz.mm, new VocabQuizWord(p, MainMenu.cc, MainMenu.wc, vbq));
 			
 		}
 		

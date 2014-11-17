@@ -29,21 +29,17 @@ public class LateralSkull extends JPanel{
 	private static BufferedImage bi;
 	private static JTextField cs,pb,tb,ls,ss,ob,zp,eam,mp,sp,mr,ma,mf,m,am,mx,zb,nb,lb,eb,sb,fb;
 	private static String css,pbs,tbs,lss,sss,obs,zps,eams,mps,sps,mrs,mas,mfs,ms,ams,mxs,zbs,nbs,lbs,ebs,sbs,fbs;
-	private static Color cc; //Correct color
-	private static Color DARKGREEN;
+	private static Color cc, wc;
 	private static JButton back, answers, reset;
 	
-	public LateralSkull(Container pane, boolean colorblind)
+	public LateralSkull(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		try {
 			File f = new File("resources" + File.separator + "LateralSkull.jpg");
@@ -91,7 +87,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							cs.setForeground(Color.RED);
+							cs.setForeground(wc);
 							
 						}
 						
@@ -125,7 +121,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							pb.setForeground(Color.RED);
+							pb.setForeground(wc);
 							
 						}
 						
@@ -160,7 +156,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							tb.setForeground(Color.RED);
+							tb.setForeground(wc);
 							
 						}
 						
@@ -195,7 +191,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							ls.setForeground(Color.RED);
+							ls.setForeground(wc);
 							
 						}
 						
@@ -230,7 +226,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							ss.setForeground(Color.RED);
+							ss.setForeground(wc);
 							
 						}
 						
@@ -265,7 +261,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							ob.setForeground(Color.RED);
+							ob.setForeground(wc);
 							
 						}
 						
@@ -300,7 +296,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							zp.setForeground(Color.RED);
+							zp.setForeground(wc);
 							
 						}
 						
@@ -335,7 +331,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							eam.setForeground(Color.RED);
+							eam.setForeground(wc);
 							
 						}
 						
@@ -370,7 +366,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							mp.setForeground(Color.RED);
+							mp.setForeground(wc);
 							
 						}
 						
@@ -405,7 +401,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							sp.setForeground(Color.RED);
+							sp.setForeground(wc);
 							
 						}
 						
@@ -440,7 +436,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							mr.setForeground(Color.RED);
+							mr.setForeground(wc);
 							
 						}
 						
@@ -475,7 +471,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							ma.setForeground(Color.RED);
+							ma.setForeground(wc);
 							
 						}
 						
@@ -510,7 +506,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							fb.setForeground(Color.RED);
+							fb.setForeground(wc);
 							
 						}
 						
@@ -545,7 +541,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							sb.setForeground(Color.RED);
+							sb.setForeground(wc);
 							
 						}
 						
@@ -580,7 +576,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							eb.setForeground(Color.RED);
+							eb.setForeground(wc);
 							
 						}
 						
@@ -615,7 +611,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							lb.setForeground(Color.RED);
+							lb.setForeground(wc);
 							
 						}
 						
@@ -650,7 +646,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							nb.setForeground(Color.RED);
+							nb.setForeground(wc);
 							
 						}
 						
@@ -685,7 +681,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							zb.setForeground(Color.RED);
+							zb.setForeground(wc);
 							
 						}
 						
@@ -720,7 +716,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							mx.setForeground(Color.RED);
+							mx.setForeground(wc);
 							
 						}
 						
@@ -755,7 +751,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							am.setForeground(Color.RED);
+							am.setForeground(wc);
 							
 						}
 						
@@ -790,7 +786,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							m.setForeground(Color.RED);
+							m.setForeground(wc);
 							
 						}
 						
@@ -825,7 +821,7 @@ public class LateralSkull extends JPanel{
 						else
 						{
 							
-							mf.setForeground(Color.RED);
+							mf.setForeground(wc);
 							
 						}
 						

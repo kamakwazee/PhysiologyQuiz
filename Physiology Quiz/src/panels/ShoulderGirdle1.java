@@ -27,19 +27,20 @@ public class ShoulderGirdle1 extends JPanel {
 	 */
 	private static final long serialVersionUID = -8545790319949725166L;
 	static JTextField aj,c,s,ae,se,ae2,tl,se2;
-	static Color DARKGREEN, cc;
+	static Color cc, wc;
 	private static BufferedImage bi;
 	private static String ajs,cs,ss,aes,ses,ae2s,tls,se2s;
 	private static JButton back, answers, reset;
 	
-	public ShoulderGirdle1(Container pane, boolean colorblind)
+	public ShoulderGirdle1(Container pane, Color correctcolor, Color wrongcolor)
 	{
 		
 		JPanel panel = this;
 		setLayout(null);
 		setBackground(Color.WHITE);
 		pane.setBackground(Color.WHITE);
-		DARKGREEN = new Color(0,153,0);
+		cc = correctcolor;
+		wc = wrongcolor;
 		
 		ajs = "Acromioclavicular joint";
 		cs = "Clavicle";
@@ -47,11 +48,6 @@ public class ShoulderGirdle1 extends JPanel {
 		aes = ae2s = "Acromial end";
 		ses = se2s = "Sternal end";
 		tls = "Trapezoid line";
-		
-		if(colorblind)
-			cc = Color.BLUE;
-		else
-			cc = DARKGREEN;
 		
 		try {
 			File f = new File("resources" + File.separator + "ShoulderGirdle1.jpg");
@@ -76,7 +72,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							aj.setForeground(Color.RED);
+							aj.setForeground(wc);
 							
 						}
 						
@@ -108,7 +104,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							c.setForeground(Color.RED);
+							c.setForeground(wc);
 							
 						}
 						
@@ -140,7 +136,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							s.setForeground(Color.RED);
+							s.setForeground(wc);
 							
 						}
 						
@@ -172,7 +168,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							ae.setForeground(Color.RED);
+							ae.setForeground(wc);
 							
 						}
 						
@@ -204,7 +200,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							se.setForeground(Color.RED);
+							se.setForeground(wc);
 							
 						}
 						
@@ -236,7 +232,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							ae2.setForeground(Color.RED);
+							ae2.setForeground(wc);
 							
 						}
 						
@@ -268,7 +264,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							tl.setForeground(Color.RED);
+							tl.setForeground(wc);
 							
 						}
 						
@@ -300,7 +296,7 @@ public class ShoulderGirdle1 extends JPanel {
 						else
 						{
 							
-							se2.setForeground(Color.RED);
+							se2.setForeground(wc);
 							
 						}
 						
