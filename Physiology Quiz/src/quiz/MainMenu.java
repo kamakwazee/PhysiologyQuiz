@@ -21,7 +21,7 @@ public class MainMenu extends JPanel
 	 */
 	private static final long serialVersionUID = -564092572158988199L;
 	private static JButton b;
-	private static VocabQuizButton vq5,vq6;
+	private static VocabQuizButton vq5,vq6,vq7;
 	private static JCheckBox cb; //Color blind
 	public static boolean colorblind = false;
 	
@@ -79,6 +79,10 @@ public class MainMenu extends JPanel
 		vq6 = new VocabQuizButton(pane, colorblind, "Chapter 6 Vocab Quiz", new File("resources" + File.separator + "Ch6Vocab.txt"));
 		vq6.setBounds(340,170,200,50);
 		add((JButton)vq6);
+		
+		vq7 = new VocabQuizButton(pane, colorblind, "Chapter 7 Vocab Quiz", new File("resources" + File.separator + "Ch7Vocab.txt"));
+		vq7.setBounds(340,230,200,50);
+		add((JButton)vq7);
 		
 	}
 	
