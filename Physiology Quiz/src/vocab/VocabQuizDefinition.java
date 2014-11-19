@@ -109,6 +109,54 @@ public class VocabQuizDefinition extends JPanel {
 		
 	}
 	
+	private static String ignoreParentheses(String s)
+	{
+		
+		if(!s.contains("("))
+			return s;
+		
+		char[] ch = s.toCharArray();
+		String str = "";
+		boolean inp = false;
+		
+		for(int i = 0; i < ch.length; i++)
+		{
+			
+			if(!inp)
+			{
+				if(ch[i] == ' ' && i != ch.length-1)
+				{
+					
+					if(ch[i+1] == '(')
+						inp = true;
+					
+				}
+				else
+				{
+					
+					str += ch[i];
+					
+				}
+				
+			}
+			else
+			{
+				
+				if(ch[i] == ')')
+				{
+					
+					inp = false;
+					
+				}
+				
+			}
+			
+		}
+		
+		return str;
+		
+	}
+	
 	private static JTextArea makeDefArea(String def)
 	{
 		
@@ -160,7 +208,7 @@ public class VocabQuizDefinition extends JPanel {
 							String t = getTextWithoutEnter(defArea.getText());
 							defArea.setText(t);
 							
-							if(t.equalsIgnoreCase(def))
+							if(t.equalsIgnoreCase(def) || t.equalsIgnoreCase(ignoreParentheses(def)))
 							{
 								
 								defArea.setEditable(false);
