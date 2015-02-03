@@ -1,6 +1,6 @@
 Af- - toward
 Astro- - star
-Dendr- tree
+Dendr- - tree
 Ef- - away from
 -ferent - carried
 -glia - glue
@@ -11,7 +11,7 @@ Saltat- - leaping
 -soma - body
 Syn- - together
 Multiple Sclerosis - a disease that causes progressive destruction of myelin sheaths of neurons in the CNS
-Epilepsy - a disorder characterized by short, recurrent, period attacks of motor, sensory, or psychological malfunction, although it almost never affects intelligence
+Epilepsy - a disorder characterized by short, recurrent, periodical attacks of motor, sensory, or psychological malfunction, although it almost never affects intelligence
 Demyelination - loss or destruction of myelin sheaths around axons in the CNS or PNS
 Guillain-Barre Syndrome - a demyelinating disorder in which macrophages remove myelin from PNS axons
 Neuropathy - any disorder that affects the nervous system

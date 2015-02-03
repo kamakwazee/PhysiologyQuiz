@@ -311,7 +311,6 @@ public class VocabQuizDefinition extends JPanel {
 		try {
 			ArrayList<String> linesList = new ArrayList<String>();
 			Scanner scan = new Scanner(vocabquiz);
-			
 			while(scan.hasNextLine())
 			{
 				
