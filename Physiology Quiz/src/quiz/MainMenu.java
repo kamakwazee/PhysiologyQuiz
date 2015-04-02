@@ -21,7 +21,7 @@ public class MainMenu extends JPanel
 	private static final long serialVersionUID = -564092572158988199L;
 	private static JButton b, ccb, wcb;
 	public static Color cc, wc;
-	private static VocabQuizButton vq5,vq6,vq7,vq8,vq9,vq10,vq14;
+	private static VocabQuizButton vq5,vq6,vq7,vq8,vq9,vq10,vq14,vq15;
 	
 	public MainMenu(Container pane)
 	{
@@ -114,6 +114,10 @@ public class MainMenu extends JPanel
 		vq14 = new VocabQuizButton(pane, "Chapter 14 Vocab Quiz", new File("resources" + File.separator + "Ch14Vocab.txt"));
 		vq14.setBounds(340,470,200,50);
 		add((JButton)vq14);
+		
+		vq15 = new VocabQuizButton(pane, "Chapter 15 Vocab Quiz", new File("resources" + File.separator + "Ch15Vocab.txt"));
+		vq15.setBounds(340,530,200,50);
+		add((JButton)vq15);
 		
 	}
 	
