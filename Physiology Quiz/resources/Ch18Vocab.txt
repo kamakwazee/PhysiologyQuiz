@@ -5,10 +5,10 @@ Dys- - bad, difficult
 -ectasis - dilation
 Ex- - out
 In- - in
-Intra- - wihtin
+Intra- - within
 -pnea - breathe
 Pneumo- - air
-Pulmo- - air
+Pulmo- - lung
 Rhin- - nose
 Spir- - breathe
 Rhinoplasty - surgical procedure to alter the shape of the external nose
@@ -22,7 +22,7 @@ Bronchitis - an inflammation of the upper respiratory tract
 Hypercapnia - increase of Pco2
 Hypocapnia - the partial pressure of CO2 in arterial blood is lower than 40 mm Hg
 Asthma - disorder characterized by chronic airway inflammation, airway hypersensitivity to a variety of stimuli and airway obstruction
-chronic destructive pulmonary disease (COPD) - a respiratory disorder characterized by chronic obstruction of airflow
+chronic obstructive pulmonary disease (COPD) - a respiratory disorder characterized by chronic obstruction of airflow
 chronic bronchitis - disorder characterized by excessive secretion of bronchial mucus accompanied by a cough
 lung cancer - the leading cause of cancer death in both males and females
 Pneumonia - an acute infection or inflammation of the alveoli
